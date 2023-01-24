@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HW1 by Vladyslav Karpenko</title>
+
+    <style>
+        script {
+            display: block;
+
+            background-color: black;
+
+            color: bisque;
+            font-family: monospace;
+
+            white-space: pre;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <script>
+        const str = 'text';
+        console.log('1.\t' + typeof str);
+
+        const num = 123;
+        console.log('2.\t' + typeof num);
+
+        const bigNum = 123n;
+        console.log('3.\t' + typeof bigNum);
+
+        const logic = true;
+        console.log('4.\t' + typeof logic);
+
+
+        const sym = Symbol();
+        console.log('5.\t' + typeof sym);
+
+
+        let nothing;
+        console.log('6.\t' + typeof nothing);
+
+        nothing = null;
+        console.log('7.\t' + typeof nothing);
+
+
+        const obj = new Object();
+        console.log('8.\t' + typeof obj);
+
+    </script>
+    
+</body>
+
+</html>
