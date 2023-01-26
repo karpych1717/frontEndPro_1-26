@@ -26,25 +26,25 @@ const op = prompt('Enter operator:');
 
 switch (op) {
     case '+':
-        alert(`${a} + ${b} = ${sum(a, b)};`);
+        alert( `${a} + ${b} = ${sum(a, b)};` );
         break;
 
     case '-':
-        alert(`${a} - ${b} = ${sub(a, b)};`);
+        alert( `${a} - ${b} = ${sub(a, b)};` );
         break;
 
     case '*':
-        alert(`${a} + ${b} = ${mul(a, b)};`);
+        alert( `${a} + ${b} = ${mul(a, b)};` );
         break;
 
     case '/':
         if (b != 0) {
-            alert(`${a} / ${b} = ${sum(a, b)};`);
+            alert( `${a} / ${b} = ${sum(a, b)};` );
         } else {
             alert('division by zero is not allowed');
         }
         break;
 
     default:
-        alert(`the '${op}' operator is unknown`);
+        alert( `the '${op}' operator is unknown` );
 }
