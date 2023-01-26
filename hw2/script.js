@@ -39,7 +39,7 @@ switch (op) {
 
     case '/':
         if (b != 0) {
-            alert( `${a} / ${b} = ${sum(a, b)};` );
+            alert( `${a} / ${b} = ${div(a, b)};` );
         } else {
             alert('division by zero is not allowed');
         }
