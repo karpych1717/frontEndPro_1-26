@@ -4,10 +4,32 @@
 <head>
     <title>HW2 by Vladyslav Karpenko</title>
 
+    <style>
+        script {
+            display: block;
+
+            background-color: black;
+
+            color: bisque;
+            font-family: monospace;
+
+            white-space: pre;
+        }
+
+    </style>
+
 </head>
 
 <body>
-    <script src='script.js'></script>
+    <script>
+        let userName = prompt('What is your name?', 'noname');
+
+        userName = userName.charAt(0).toUpperCase() + userName.slice(1);
+
+        //alert(`Hello, ${userName}! How are you?`);
+        alert('Hello, ' + userName + '! How are you?');
+
+    </script>
     
 </body>
 

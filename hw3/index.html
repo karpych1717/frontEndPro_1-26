@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HW3 by Vladyslav Karpenko</title>
+
+    <style>
+        script {
+            display: block;
+
+            background-color: black;
+
+            color: bisque;
+            font-family: monospace;
+
+            white-space: pre;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <button name="button1" onclick="function1()">Task 1</button>
+    <button name="button2" onclick="function2()">Task 2</button>
+
+    <script>
+        function function1() {
+            const str1 = prompt('Enter first string:',  'str1');
+            const str2 = prompt('Enter second string:', 'str2');
+            const str3 = prompt('Enter third string:',  'str3');
+
+            const summ = ''.concat(str1, ', ', str2, ', ', str3);
+
+            alert(summ);
+        }
+
+        function function2() {
+            let num = +prompt('Enter The Number:', '99999');
+
+            if ( Number.isNaN(num) ) {
+                alert('number is not a number');
+                return;
+            }
+    
+
+            if ( 10_000 > num || 99_999 < num ) {
+                alert('number is out of range');
+                return;
+            }
+
+
+            const digits = numberToArray(num);
+
+            alert( digits.join(' ') );
+        }
+
+        function numberToArray(x) {
+            const arr = new Array(5);
+
+            for (let i = 0; i < 5; i++) {
+                arr[i] = x % 10;
+
+                x -= arr[i];
+                x /= 10;
+            }
+
+            arr.reverse();
+
+            return arr;
+        }
+
+    </script>
+    
+</body>
+
+</html>
