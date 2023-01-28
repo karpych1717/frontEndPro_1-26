@@ -31,6 +31,13 @@ a, a:visited, a:hover, a:active {
     text-underline-position: under;
 }
 
+.paragraph {
+    margin-bottom: 25px;
+}
+
+.paragraph > h3 {
+    margin-bottom: 10px;
+}
 footer {
     text-align: center;
 }
