@@ -1,9 +1,9 @@
 body {
     font-family: 'Georgia', sans-serif;
     font-size: 120%;
-    color: PaleGoldenrod;
+    color: #eee8aa;
 
-    background-color: Black;
+    background-color: #000000;
 }
 
 #paper {
@@ -12,7 +12,7 @@ body {
     margin: 30px auto 30px;
     padding: 30px 30px 30px 60px;
 
-    background-color: rgb(32, 53, 53);
+    background-color: #203535;
 }
 
 #name {
@@ -35,15 +35,21 @@ footer {
     text-align: center;
 }
 
+.buttons-block {
+    text-align: center;
+
+    background-color: #355555;
+}
+
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50;
     transition-duration: 0.4s;
 
     border: none;
     border-radius: 2px;
     margin: 20px 30px 20px;
 
-    color: white;
+    color: #ffffff;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -53,7 +59,7 @@ footer {
 
 .button:hover {
     background-color: #69bd6c; /* Green */
-    color: white;
+    color: #ffffff;
 }
 
 script {
