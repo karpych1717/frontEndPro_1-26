@@ -76,22 +76,24 @@
             The sheep were borrowed from the 
             <a href='https://github.com/Adrianotiger/web-esheep'>web-esheep</a> 
             project.
+
         </footer>
+
+        
+        <script style='display:none'>
+            const AMOUNT = 3;
+            const sheeps = [];
+    
+            const DELAY = 1500;
+    
+    
+            for (let i = 0; i < AMOUNT; ++i) {
+                sheeps.push( new eSheep() );
+                setTimeout( () => sheeps[i].Start(), i * (Math.random() + i) * DELAY);
+            }
+        </script>
+
     </div>
-
-
-    <script>
-        const AMOUNT = 3;
-        const sheeps = [];
-
-        const DELAY = 1500;
-
-
-        for (let i = 0; i < AMOUNT; ++i) {
-            sheeps.push( new eSheep() );
-            setTimeout( () => sheeps[i].Start(), i * (Math.random() + i) * DELAY);
-        }
-    </script>
     
 </body>
 
