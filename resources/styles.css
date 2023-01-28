@@ -1,0 +1,65 @@
+body {
+    font-family: 'Georgia', sans-serif;
+    font-size: 120%;
+    color: PaleGoldenrod;
+
+    background-color: Black;
+}
+
+#paper {
+    width: 900px;
+
+    margin: 30px auto 30px;
+    padding: 30px 30px 30px 60px;
+
+    background-color: rgb(32, 53, 53);
+}
+
+#name {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.info_text {
+    margin: 10px;
+
+    line-height: 1.4;
+}
+
+a, a:visited, a:hover, a:active {
+    color: #8ab4f8;
+    text-underline-position: under;
+}
+
+footer {
+    text-align: center;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    transition-duration: 0.4s;
+
+    border: none;
+    border-radius: 2px;
+    margin: 20px 30px 20px;
+
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #69bd6c; /* Green */
+    color: white;
+}
+
+script {
+    display: block;
+    
+    font-family: monospace;
+
+    white-space: pre;
+}

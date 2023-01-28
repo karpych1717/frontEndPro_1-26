@@ -1,3 +1,37 @@
+function function1 () {
+    const a = +prompt('Enter 1st operand:');
+    const b = +prompt('Enter 2nd operand:');
+    
+    const op = prompt('Enter operator:');
+
+    
+    switch (op) {
+        case '+':
+            alert( `${a} + ${b} = ${sum(a, b)};` );
+            break;
+    
+        case '-':
+            alert( `${a} - ${b} = ${sub(a, b)};` );
+            break;
+    
+        case '*':
+            alert( `${a} + ${b} = ${mul(a, b)};` );
+            break;
+    
+        case '/':
+            if (b != 0) {
+                alert( `${a} / ${b} = ${div(a, b)};` );
+            } else {
+                alert('division by zero is not allowed');
+            }
+            break;
+    
+        default:
+            alert( `the '${op}' operator is unknown` );
+    }
+    
+}
+
 function sum (x, y) {
     return x + y;
 }
@@ -17,34 +51,4 @@ function div (x, y) {
     } else {
         return x / y;
     }
-}
-
-const a = +prompt('Enter 1st operand:');
-const b = +prompt('Enter 2nd operand:');
-
-const op = prompt('Enter operator:');
-
-switch (op) {
-    case '+':
-        alert( `${a} + ${b} = ${sum(a, b)};` );
-        break;
-
-    case '-':
-        alert( `${a} - ${b} = ${sub(a, b)};` );
-        break;
-
-    case '*':
-        alert( `${a} + ${b} = ${mul(a, b)};` );
-        break;
-
-    case '/':
-        if (b != 0) {
-            alert( `${a} / ${b} = ${div(a, b)};` );
-        } else {
-            alert('division by zero is not allowed');
-        }
-        break;
-
-    default:
-        alert( `the '${op}' operator is unknown` );
 }
