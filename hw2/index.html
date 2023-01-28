@@ -17,13 +17,20 @@
         <hr>
         
 
+        <button class="button" onclick="function1()">Click It</button>
+
+
         <script>
-            let userName = prompt('What is your name?', 'noname');
+            function function1() {
+                let userName = prompt('What is your name?', 'noname');
 
-            userName = userName.charAt(0).toUpperCase() + userName.slice(1);
+                userName = userName.charAt(0).toUpperCase() + userName.slice(1);
 
-            //alert(`Hello, ${userName}! How are you?`);
-            alert('Hello, ' + userName + '! How are you?');
+                //alert(`Hello, ${userName}! How are you?`);
+                alert('Hello, ' + userName + '! How are you?');
+                
+            }
+            
 
         </script>
 

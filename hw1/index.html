@@ -14,35 +14,41 @@
         <a href='../index.html'> &lt;-- Back</a><br><br>
 
         <hr>
+
+
+        <button class="button" onclick="function1()">Click It</button>
         
         
         <script>
-            const str = 'text';
-            console.log('1.\t' + typeof str);
+            function function1() {
+                const str = 'text';
+                console.log('1.\t' + typeof str);
 
-            const num = 123;
-            console.log('2.\t' + typeof num);
+                const num = 123;
+                console.log('2.\t' + typeof num);
 
-            const bigNum = 123n;
-            console.log('3.\t' + typeof bigNum);
+                const bigNum = 123n;
+                console.log('3.\t' + typeof bigNum);
 
-            const logic = true;
-            console.log('4.\t' + typeof logic);
-
-
-            const sym = Symbol();
-            console.log('5.\t' + typeof sym);
+                const logic = true;
+                console.log('4.\t' + typeof logic);
 
 
-            let nothing;
-            console.log('6.\t' + typeof nothing);
-
-            nothing = null;
-            console.log('7.\t' + typeof nothing);
+                const sym = Symbol();
+                console.log('5.\t' + typeof sym);
 
 
-            const obj = new Object();
-            console.log('8.\t' + typeof obj);
+                let nothing;
+                console.log('6.\t' + typeof nothing);
+
+                nothing = null;
+                console.log('7.\t' + typeof nothing);
+
+
+                const obj = new Object();
+                console.log('8.\t' + typeof obj);
+            }
+            
 
         </script>
 
