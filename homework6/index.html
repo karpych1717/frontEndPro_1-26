@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HW6 by Vladyslav Karpenko</title>
+
+    <link rel='icon' type='image/png' href='../resources/logo.png'>
+
+    <link rel='stylesheet' type='text/css' href='../resources/styles.css'>
+
+</head>
+
+<body>
+    <div id='paper'>
+        <a href='../index.html'> &lt;-- Back</a><br><br>
+
+        <hr>
+
+
+        <div class="buttons-block">
+            <button class="button" onclick="taskFunction1()">Task 1</button>
+            <button class="button" onclick="taskFunction2()">Task 2</button>
+            <button class="button" onclick="taskFunction3()">Task 3</button>
+            <button class="button" onclick="taskFunction4()">Task 4</button>
+            <button class="button" onclick="taskFunction5()">Task 5</button>
+        </div>
+
+
+        <script>
+            function taskFunction1() {
+                let output = '';
+
+                for (let i = 20; i <= 30; ) {
+                    output += i;
+
+                    if ( i !== 30 ) {
+                        output += ' ';
+                    }
+
+                    i += 0.5;
+                }
+
+
+                console.log('> task 1:')
+
+                console.log(output);
+
+                console.log('=========');
+
+            }
+
+
+            function taskFunction2() {
+                const price = 27; //._.
+
+
+                console.log('> task 2:');
+
+
+                for (let i = 10; i <= 100; ) {
+                    console.log( `${ price }\t*\t${ i }\t=\t${ price * i };`);
+
+                    i += 10;
+                }
+
+
+                console.log('=========');
+
+            }
+
+
+            function taskFunction3() {
+                const limit = +prompt('enter limit value:', '225');
+
+
+                if (Number.isNaN(limit) || limit <= 0) {
+                    alert('O_o');
+                    return;
+                }
+
+
+                console.log('> task 3:');
+                console.log('> lim = ' + limit);
+
+                for (let i = 1; i <= 100; i++) {
+                    if (i ** 2 >= limit) {
+                        break;
+                    }
+
+                    console.log(i);
+                }
+            }
+
+
+            function taskFunction4() {
+                const N = +prompt('enter the value:', '31');
+
+
+                if ( Number.isNaN(N) || N <= 0 ) {
+                    alert('O_o');
+                    return;
+                }
+
+
+                console.log('> task 4:');
+                console.log('> N = ' + N);
+
+
+                isPrime = true;
+
+                for (let i = 2; i <= N/2; i++) {
+                    if ( N%i === 0) {
+                        isPrime = false;
+                        break;
+                    }
+
+                }
+
+
+                console.log( `isPrime(${N}) = ${isPrime};` )
+
+                console.log('=========');
+
+            }
+
+
+            function taskFunction5() {
+                const N = +prompt('enter the value:', '31');
+
+                if ( Number.isNaN(N) || N <= 0 ) {
+                    alert('O_o');
+                    return;
+                }
+
+
+                console.log('> task 5:');
+                console.log('> N = ' + N);
+
+
+                let canI = false;
+
+                for (let i = 0; ;i++) {
+                    if ( 3**i < N ) {
+                        continue;
+                    }
+
+                    if ( 3**i > N ) {
+                        break;
+                    }
+
+                    if ( 3**i == N) {
+                        canI = true;
+                        break;
+                    }
+                }
+
+
+                console.log( `canI(${N}) = ${canI};` )
+
+                console.log('=========');
+
+            }
+
+        </script>
+    
+    </div>
+    
+</body>
+
+</html>
