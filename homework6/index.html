@@ -58,7 +58,7 @@
 
 
                 for (let i = 10; i <= 100; ) {
-                    console.log( `${ price }\t*\t${ i }\t=\t${ price * i };`);
+                    console.log( `${ price }\t*\t${ i }\t=\t${ price * i };` );
 
                     i += 10;
                 }
@@ -73,7 +73,7 @@
                 const limit = +prompt('enter limit value:', '225');
 
 
-                if (Number.isNaN(limit) || limit <= 0) {
+                if ( Number.isNaN(limit) || limit <= 0 ) {
                     alert('O_o');
                     return;
                 }
@@ -83,7 +83,7 @@
                 console.log('> lim = ' + limit);
 
                 for (let i = 1; i <= 100; i++) {
-                    if (i ** 2 >= limit) {
+                    if ( i ** 2 >= limit ) {
                         break;
                     }
 
@@ -142,7 +142,7 @@
 
                 let canI = false;
 
-                for (let i = 0; ;i++) {
+                for (let i = 0; ; i++) {
                     if ( 3**i < N ) {
                         continue;
                     }
@@ -151,7 +151,7 @@
                         break;
                     }
 
-                    if ( 3**i == N) {
+                    if ( 3**i == N ) {
                         canI = true;
                         break;
                     }
