@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HW4 by Vladyslav Karpenko</title>
+
+    <link rel='icon' type='image/png' href='../resources/logo.png'>
+
+    <link rel='stylesheet' type='text/css' href='../resources/styles.css'>
+
+</head>
+
+<body>
+    <div id='paper'>
+        <a href='../index.html'> &lt;-- Back</a><br><br>
+
+        <hr>
+
+        
+        <div class="buttons-block">
+            <button class="button" onclick="taskFunction()">Click It</button>
+        </div>
+
+
+        <script>
+            function taskFunction() {
+                let numOrStr = prompt('input number or string');
+                console.log(numOrStr);
+
+
+                switch (true) {
+                    case ( numOrStr === null ) : {
+                        console.log('ви скасували');
+                        break;
+                    }
+
+                    case ( numOrStr.trim() === '' ) : {
+                        console.log('Empty String');
+                        break;
+                    }
+
+                    case ( isNaN(+numOrStr) ) : {
+                        console.log(' number is Ba_NaN');
+                        break;
+                    }
+
+                    default: {
+                        console.log('OK!');
+                    }
+                }
+            }
+
+        </script>
+    
+    </div>
+    
+</body>
+
+</html>
