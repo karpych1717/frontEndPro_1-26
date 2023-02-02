@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HW4 by Vladyslav Karpenko</title>
+
+    <link rel='icon' type='image/png' href='../resources/logo.png'>
+
+    <link rel='stylesheet' type='text/css' href='../resources/styles.css'>
+
+</head>
+
+<body>
+    <div id='paper'>
+        <a href='../index.html'> &lt;-- Back</a><br><br>
+
+        <hr>
+
+        
+        <div class="buttons-block">
+            <button class="button" onclick="taskFunction()">Click It</button>
+        </div>
+
+
+        <script>
+            function taskFunction() {
+                const userYear  = prompt('Enter year:',  '1999');
+                let   userCity  = prompt('Enter city:',  'Monaco');
+                let   userSport = prompt('Enter sport:', 'poker');
+
+                if (userCity !== null) {
+                    userCity = userCity.toLowerCase();
+                }
+
+                if (userSport !== null) {
+                    userSport = userSport.toLowerCase();
+                }
+
+
+                let message;
+
+
+                const date     = new Date();
+                const thisYear = date.getFullYear();
+
+
+                if (userYear === null) {
+                    message = 'sorry you didn`t want to enter your age :(\n';
+                } else {
+                    message = `you are ${thisYear - userYear} years old.\n`;
+                }
+
+
+                switch ( userCity ) {
+                    case null : {
+                        message += 'sorry you didn`t want to enter your city :(\n';
+                        break;
+                    }
+
+                    case 'kyiv' :
+                    case 'київ': {
+                        message += 'u live in the capital of Ukraine.\n';
+                        break;
+                    }
+
+                    case 'london' :
+                    case 'лондон': {
+                        message += 'u live in the capital of UK.\n';
+                        break;
+                    }
+
+                    case 'washington' :
+                    case 'вашингтон': {
+                        message += 'u live in the capital of US.\n';
+                        break;
+                    }
+
+                    default :
+                        message += `u live in ${userCity}.\n`;
+                }
+
+
+                switch ( userSport ) {
+                    case null : {
+                        message += 'sorry you didn`t want to enter your sport :(\n';
+                        break;
+                    }
+
+                    case 'football' :
+                    case 'футбол': {
+                        message += 'Cool! Do you want to be like Messi?\n';
+                        break;
+                    }
+
+                    case 'chess' :
+                    case 'шахи': {
+                        message += 'Cool! Do you want to be like Fisher?\n';
+                        break;
+                    }
+
+                    case 'tennis' :
+                    case 'теніс': {
+                        message += 'Cool! Do you want to be like Venus?\n';
+                        break;
+                    }
+
+                    default :
+                        message += `your sport is ${userSport}.\n`;
+                }
+
+
+                alert(message);
+            }
+
+        </script>
+    
+    </div>
+    
+</body>
+
+</html>
