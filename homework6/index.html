@@ -27,17 +27,17 @@
 
 
         <script>
+            'use strict'
+
             function taskFunction1() {
                 let output = '';
 
-                for (let i = 20; i <= 30; ) {
+                for (let i = 20; i <= 30; i += 0.5) {
                     output += i;
 
                     if ( i !== 30 ) {
                         output += ' ';
                     }
-
-                    i += 0.5;
                 }
 
 
@@ -53,9 +53,7 @@
             function taskFunction2() {
                 const price = 27; //._.
 
-
                 console.log('> task 2:');
-
 
                 for (let i = 10; i <= 100; ) {
                     console.log( `${ price }\t*\t${ i }\t=\t${ price * i };` );
@@ -71,7 +69,6 @@
 
             function taskFunction3() {
                 const limit = +prompt('enter limit value:', '225');
-
 
                 if ( Number.isNaN(limit) || limit <= 0 ) {
                     alert('O_o');
@@ -98,18 +95,16 @@
             function taskFunction4() {
                 const N = +prompt('enter the value:', '31');
 
-
-                if ( Number.isNaN(N) || N <= 0 ) {
+                if ( Number.isNaN(N) || N <= 1 ) {
                     alert('O_o');
                     return;
                 }
-
 
                 console.log('> task 4:');
                 console.log('> N = ' + N);
 
 
-                isPrime = true;
+                let isPrime = true;
 
                 for (let i = 2; i <= N/2; i++) {
                     if ( N%i === 0) {
@@ -121,7 +116,6 @@
 
 
                 console.log( `isPrime(${N}) = ${isPrime};` )
-
                 console.log('=========');
 
             }
@@ -151,7 +145,7 @@
                         break;
                     }
 
-                    if ( 3**i == N ) {
+                    if ( 3**i === N ) {
                         canI = true;
                         break;
                     }
@@ -159,7 +153,6 @@
 
 
                 console.log( `canI(${N}) = ${canI};` )
-
                 console.log('=========');
 
             }
