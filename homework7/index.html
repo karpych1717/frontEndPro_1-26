@@ -32,7 +32,7 @@
                 let summ = 0;
 
                 console.log(
-                    users.filter( user => +user.balance.slice(1).replace(',', '') > 2000 ).map( user => {summ += +user.balance.slice(1).replace(',', '') * 100; return user.phone} )
+                    users.filter( user => {summ += +user.balance.slice(1).replace(',', '') * 100; return +user.balance.slice(1).replace(',', '') > 2000} ).map( user => user.phone )
                 );
 
                 summ /= 100;
@@ -46,7 +46,7 @@
                 const numbers  = filtered.map( user => user.phone );
 
 
-                let summ = filtered.reduce(
+                let summ = users.reduce(
                     (summ, user) => +user.balance.slice(1).replace(',', '') * 100 + summ, 0
                 );
 
@@ -61,7 +61,7 @@
                 const filtered       = users.filter( user => getUserBalance(user) > 2000 );
                 const filteredPhones = filtered.map( user => user.phone );
 
-                const centSumm   = filtered.reduce( (summ, user) => summ + 100 * getUserBalance(user), 0);
+                const centSumm   = users.reduce( (summ, user) => summ + 100 * getUserBalance(user), 0);
                 const dollarSumm = centSumm / 100;
 
                 console.log(filteredPhones);
