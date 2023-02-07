@@ -32,10 +32,8 @@
                 let summ = 0;
 
                 console.log(
-                    users.filter( user => {summ += +user.balance.slice(1).replace(',', '') * 100; return +user.balance.slice(1).replace(',', '') > 2000} ).map( user => user.phone )
+                    users.filter( user => {summ += +user.balance.slice(1).replace(',', ''); return +user.balance.slice(1).replace(',', '') > 2000} ).map( user => user.phone )
                 );
-
-                summ /= 100;
 
                 console.log( summ );
             }
