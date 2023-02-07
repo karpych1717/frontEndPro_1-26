@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HW7 by Vladyslav Karpenko</title>
+
+    <link rel='icon' type='image/png' href='../resources/logo.png'>
+
+    <link rel='stylesheet' type='text/css' href='../resources/styles.css'>
+
+</head>
+
+<body>
+    <div id='paper'>
+        <a href='../index.html'> &lt;-- Back</a><br><br>
+
+        <hr>
+
+
+        <div class="buttons-block">
+            <button class="button" onclick="easyFunction()">easy</button>
+            <button class="button" onclick="middleFunction()">Middle</button>
+            <button class="button" onclick="hardFunction()">HARD!!1</button>
+        </div>
+
+
+        <script>
+            'use strict'
+
+
+            function easyFunction() {
+                let summ = 0;
+
+                console.log(
+                    users.filter( user => +user.balance.slice(1).replace(',', '') > 2000 ).map( user => {summ += +user.balance.slice(1).replace(',', '') * 100; return user.phone} )
+                );
+
+                summ /= 100;
+
+                console.log( summ );
+            }
+
+
+            function middleFunction() {
+                const filtered = users.filter( user => +user.balance.slice(1).replace(',', '') > 2000 );
+                const numbers  = filtered.map( user => user.phone );
+
+
+                let summ = filtered.reduce(
+                    (summ, user) => +user.balance.slice(1).replace(',', '') * 100 + summ, 0
+                );
+
+                summ /= 100;
+
+                console.log(numbers);
+                console.log(summ);
+            }
+
+
+            function hardFunction() {
+                const filtered       = users.filter( user => getUserBalance(user) > 2000 );
+                const filteredPhones = filtered.map( user => user.phone );
+
+                const centSumm   = filtered.reduce( (summ, user) => summ + 100 * getUserBalance(user), 0);
+                const dollarSumm = centSumm / 100;
+
+                console.log(filteredPhones);
+                console.log( makeDollarString(dollarSumm) );
+            }
+
+
+            function getUserBalance (user) {
+                return +user.balance.slice(1).replace(',', '');
+            }
+
+
+            function makeDollarString (summ) {
+                return '$' + summ.toLocaleString("en-US");
+            }
+
+
+            const users = [
+                {
+                    "index": 0,
+                    "isActive": true,
+                    "balance": "$2,226.60",
+                    "name": "Eugenia Sawyer",
+                    "gender": "female",
+                    "phone": "+1 (840) 583-3207",
+                    "address": "949 John Street, Rose, Puerto Rico, 1857"
+                },
+                {
+                    "index": 1,
+                    "isActive": true,
+                    "balance": "$2,613.77",
+                    "name": "Pauline Gallegos",
+                    "gender": "female",
+                    "phone": "+1 (985) 593-3328",
+                    "address": "328 Greenpoint Avenue, Torboy, North Dakota, 6857"
+                },
+                {
+                    "index": 2,
+                    "isActive": false,
+                    "balance": "$3,976.41",
+                    "name": "Middleton Chaney",
+                    "gender": "male",
+                    "phone": "+1 (995) 591-2478",
+                    "address": "807 Fleet Walk, Brutus, Arkansas, 9783"
+                },
+                {
+                    "index": 3,
+                    "isActive": true,
+                    "balance": "$1,934.58",
+                    "name": "Burns Poole",
+                    "gender": "male",
+                    "phone": "+1 (885) 559-3422",
+                    "address": "730 Seba Avenue, Osage, Alabama, 6290"
+                },
+                {
+                    "index": 4,
+                    "isActive": true,
+                    "balance": "$3,261.65",
+                    "name": "Mcfadden Horne",
+                    "gender": "male",
+                    "phone": "+1 (942) 565-3988",
+                    "address": "120 Scholes Street, Kirk, Michigan, 1018"
+                },
+                {
+                    "index": 5,
+                    "isActive": false,
+                    "balance": "$1,790.56",
+                    "name": "Suzette Lewis",
+                    "gender": "female",
+                    "phone": "+1 (837) 586-3283",
+                    "address": "314 Dunne Place, Bawcomville, Guam, 9053"
+                }
+            ];
+
+        </script>
+    
+    </div>
+    
+</body>
+
+</html>
