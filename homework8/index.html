@@ -82,10 +82,10 @@
                 const str = prompt('enter a string', 'string');
                 const sym = prompt('enter characters separated by commas', 'a, b').replaceAll(' ', '').split(',');
 
-                alert ( func(str, sym) );
+                alert ( removeCharacters(str, sym) );
             }
 
-            function func(str, sym) {
+            function removeCharacters(str, sym) {
                 let result = str;
 
                 for (let c of sym) {
