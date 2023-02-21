@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HW9 by Vladyslav Karpenko</title>
+
+    <link rel='icon' type='image/png' href='../resources/logo.png'>
+
+    <link rel='stylesheet' type='text/css' href='../resources/styles.css'>
+
+</head>
+
+<body>
+    <div id='paper'>
+        <a href='../index.html'> &lt;-- Back</a><br><br>
+
+        <hr>
+
+
+        <div class="buttons-block">
+            <button class="button" onclick="taskFunction()">Task</button>
+        </div>
+
+
+        <script>
+            'use strict'
+
+
+            function taskFunction() {
+                const sum =  ( () => {
+                    let accumulator = 0
+
+                    return (n) => {
+                        accumulator += n
+
+                        return accumulator
+                    }
+                } ) ()
+
+                
+                let input               
+                do {
+                    input = +prompt('need some input', 17)
+                    alert( sum(input) )
+                } while ( !Number.isNaN(input) )
+            }
+
+        </script>
+    
+    </div>
+    
+</body>
+
+</html>
