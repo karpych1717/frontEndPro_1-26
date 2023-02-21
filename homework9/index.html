@@ -37,12 +37,12 @@
                     }
                 } ) ()
 
-                
+
                 let input               
                 do {
-                    input = +prompt('need some input', 17)
-                    alert( sum(input) )
-                } while ( !Number.isNaN(input) )
+                    input = prompt('need some input', 17)
+                    alert( `the summ is ${sum( +input )}` )
+                } while ( input !== null && !Number.isNaN( +input ) )
             }
 
         </script>
