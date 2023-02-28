@@ -14,9 +14,7 @@ function taskFunction1 () {
   document.getElementById('paper').appendChild(pic)
 
   function randomPicName (n) {
-    if (n !== 0) return `${n}.jpg`
- 
-    return randomPicName( Math.trunc(10 * Math.random()) )
+    return n !== 0 ? `${n}.jpg` : randomPicName( Math.trunc(10 * Math.random()) )
   }
 }
 
