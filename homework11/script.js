@@ -9,10 +9,7 @@ function taskFunction1 () {
   alert(`pow(${num}, ${degree}) = ${pow(num, degree)}`)
 
   function pow (num, degree) {
-    if (degree === 0) return 1
-    if (degree === 1) return num
-
-    return num * pow(num, degree - 1)
+    return degree === 0 ? 1 : num * pow(num, degree - 1)
   }
 }
 
