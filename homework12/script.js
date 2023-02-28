@@ -6,7 +6,7 @@ window.onload = () => setUp(TASKS_AMOUNT)
 function taskFunction1 () {
   const pic = document.createElement('img')
 
-  const picName = randomPicName( Math.trunc(10 * Math.random()) )
+  const picName = randomPicName(0)
   pic.src = `./images/${picName}`
   pic.alt = `${picName} was not provided`
   pic.style.display = 'block'
