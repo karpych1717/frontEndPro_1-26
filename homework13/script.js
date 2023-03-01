@@ -1,7 +1,7 @@
 'use strict'
 
 const taskFunctions = [taskFunction1]
-window.onload = () => setUpButtons(taskFunctions)
+window.onload = () => setUpButtonBlock(taskFunctions)
 
 function taskFunction1 () {
   const pic = document.createElement('img')
@@ -18,7 +18,7 @@ function taskFunction1 () {
   }
 }
 
-function setUpButtons (taskFunctions) {
+function setUpButtonBlock (taskFunctions) {
   const paper = document.getElementById('paper')
 
   const buttonsBlock = document.createElement('div')
