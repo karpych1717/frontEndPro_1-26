@@ -1,23 +1,7 @@
 'use strict'
 
-const TASKS_AMOUNT = 1
-const buttons = new Array(TASKS_AMOUNT)
-
-window.onload = () => {
-  const paper = document.getElementById('paper')
-
-  const buttonsBlock = document.createElement('div')
-  buttonsBlock.classList.add('buttons-block')
-
-  paper.appendChild(buttonsBlock)
-
-  for (let i = 0; i < TASKS_AMOUNT; i++) {
-    buttons[i] = createButton(`Task ${i + 1}`)
-    buttonsBlock.appendChild(buttons[i])
-  }
-
-  buttons[0].addEventListener('click', taskFunction1)
-}
+const taskFunctions = [taskFunction1]
+window.onload = () => setUpButtons(taskFunctions)
 
 function taskFunction1 () {
   const pic = document.createElement('img')
@@ -34,11 +18,25 @@ function taskFunction1 () {
   }
 }
 
-function createButton (name) {
+function setUpButtons (taskFunctions) {
+  const paper = document.getElementById('paper')
+
+  const buttonsBlock = document.createElement('div')
+  buttonsBlock.classList.add('buttons-block')
+
+  for (let i = 0; i < taskFunctions.length; i++) {
+    buttonsBlock.appendChild( createButton(`Task ${i + 1}`, taskFunctions[i]) )
+  }
+
+  paper.appendChild(buttonsBlock)
+}
+
+function createButton (name, taskFunction) {
   const button = document.createElement('button')
     
   button.classList.add('button')
   button.textContent = name
+  button.addEventListener('click', taskFunction)
 
   return button
 }
