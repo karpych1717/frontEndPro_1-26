@@ -4,17 +4,25 @@ const taskFunctions = [taskFunction1]
 window.onload = () => setUpButtonBlock(taskFunctions)
 
 function taskFunction1 () {
-  const links = document.querySelectorAll('a.unsafe')
-  links.forEach(x => console.log(x.href))
-  
-  for (let link of links) {
-    if ( isSafe(link) ) continue
+  const list = makeList([1, 2, [3.1, 3.2, 3.3], 4])
 
-  }
+  document.getElementById('paper').appendChild(list)
 }
 
-function isSafe (link) {
-  return link.indexOf('https://') === 0
+function makeList (array) {
+  const list = document.createElement('ul')
+
+  for (const elem of array) {
+    list.appendChild( document.createElement('li') )
+
+    if ( Array.isArray(elem) ) {
+      list.lastChild.appendChild( makeList(elem) )
+    } else {
+      list.lastChild.innerHTML = elem
+    }
+  }
+
+  return list
 }
 
 function setUpButtonBlock (taskFunctions) {
