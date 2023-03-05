@@ -19,10 +19,7 @@ function taskFunction1 () {
 }
 
 function setUpButtonBlock (taskFunctions) {
-  const paper = document.getElementById('paper')
-
-  const buttonsBlock = document.createElement('div')
-  buttonsBlock.classList.add('buttons-block')
+  const buttonsBlock = document.getElementsByClassName('buttons-block')[0]
 
   for (let i = 0; i < taskFunctions.length; i++) {
     buttonsBlock.appendChild( createButton(`Task ${i + 1}`, taskFunctions[i]) )
