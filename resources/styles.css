@@ -71,7 +71,7 @@ footer {
     color: #ffffff;
 }
 
-script {
+script.to-show {
     display: block;
     
     font-family: monospace;

@@ -4,18 +4,17 @@ const taskFunctions = [taskFunction1]
 window.onload = () => setUpButtonBlock(taskFunctions)
 
 function taskFunction1 () {
-  const pic = document.createElement('img')
+  const links = document.querySelectorAll('a.unsafe')
+  console.log(links)
+  
+  for (let link of links) {
+    if ( isSafe(link) ) continue
 
-  const picName = randomPicName(0)
-  pic.src = `./images/${picName}`
-  pic.alt = `${picName} was not provided`
-  pic.style.display = 'block'
-
-  document.getElementById('paper').appendChild(pic)
-
-  function randomPicName (n) {
-    return n !== 0 ? `${n}.jpg` : randomPicName( Math.trunc(10 * Math.random()) )
   }
+}
+
+function isSafe (link) {
+  return link.indexOf('https://') === 0
 }
 
 function setUpButtonBlock (taskFunctions) {
@@ -24,8 +23,6 @@ function setUpButtonBlock (taskFunctions) {
   for (let i = 0; i < taskFunctions.length; i++) {
     buttonsBlock.appendChild( createButton(`Task ${i + 1}`, taskFunctions[i]) )
   }
-
-  paper.appendChild(buttonsBlock)
 }
 
 function createButton (name, taskFunction) {
