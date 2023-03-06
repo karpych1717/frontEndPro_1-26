@@ -1,8 +1,8 @@
 'use strict'
 
-window.onload = () => setUpButtonBlock()
+window.onload = () => setUpButtonsBlock()
 
-function setUpButtonBlock (taskFunctions) {
+function setUpButtonsBlock () {
   let ref = null
 
   function setRef () {
