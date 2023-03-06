@@ -1,11 +1,66 @@
 'use strict'
 
-const testFunction = () => {
+const arrowFunc = () => {
   console.log(this)
 }
 
-window.onload = main
+function nestedArrowFunc () {
+  arrowFunc()
+}
 
-function main () {
-  testFunction()
+const pureObjWithArrow = {
+  firstArrow: arrowFunc,
+  secondArrow: () => { console.log(this) }
+}
+
+function ConstructObjWithArrow () {
+  this.firstArrow = arrowFunc
+  this.secondArrow = () => { console.log(this) }
+}
+
+const objViaConstructor = new ConstructObjWithArrow()
+
+class ObjViaClass {
+  constructor () {
+    this.firstArrow = arrowFunc
+    this.secondArrow = () => { console.log(this) }
+  }
+}
+
+const objViaClass = new ObjViaClass()
+
+function callBackIt (funk) {
+  funk()
+
+  const foo = funk
+  foo()
+}
+
+const reassighnedMethod = objViaClass.secondArrow
+
+// here is real action
+const buttonsActions = [arrowFunc, nestedArrowFunc,
+  pureObjWithArrow.firstArrow, pureObjWithArrow.secondArrow,
+  objViaConstructor.firstArrow, objViaConstructor.secondArrow,
+  objViaClass.firstArrow, objViaClass.secondArrow,
+  () => callBackIt(objViaClass.secondArrow), () => reassighnedMethod()]
+
+window.onload = () => setUpButtonBlock(buttonsActions)
+
+function setUpButtonBlock (taskFunctions) {
+  const buttonsBlock = document.getElementsByClassName('buttons-block')[0]
+
+  for (let i = 0; i < taskFunctions.length; i++) {
+    buttonsBlock.appendChild(createButton(`Button ${i + 1}`, taskFunctions[i]))
+  }
+}
+
+function createButton (name, taskFunction) {
+  const button = document.createElement('button')
+
+  button.classList.add('button')
+  button.textContent = name
+  button.addEventListener('click', taskFunction)
+
+  return button
 }
