@@ -1,6 +1,6 @@
 'use strict'
 
-window.onload = () => setUpButtonsBlock()
+window.onload = setUpButtonsBlock
 
 function setUpButtonsBlock () {
   let ref = null
