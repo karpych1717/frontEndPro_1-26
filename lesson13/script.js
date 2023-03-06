@@ -31,10 +31,18 @@ const objViaClass = new ObjViaClass()
 
 function callBackIt (funk) {
   funk()
-
-  const foo = funk
-  foo()
 }
+
+class ObjWithPureFunc {
+  constructor () {
+    this.met = function () {
+      console.log(this)
+    }
+  }
+}
+
+const objWithPureFunc = new ObjWithPureFunc()
+const pureFunc = objWithPureFunc.met
 
 const reassighnedMethod = objViaClass.secondArrow
 
@@ -43,7 +51,8 @@ const buttonsActions = [arrowFunc, nestedArrowFunc,
   pureObjWithArrow.firstArrow, pureObjWithArrow.secondArrow,
   objViaConstructor.firstArrow, objViaConstructor.secondArrow,
   objViaClass.firstArrow, objViaClass.secondArrow,
-  () => callBackIt(objViaClass.secondArrow), () => reassighnedMethod()]
+  () => callBackIt(objViaClass.secondArrow), () => reassighnedMethod(),
+  () => objWithPureFunc.met(), objWithPureFunc.met, pureFunc]
 
 window.onload = () => setUpButtonBlock(buttonsActions)
 
