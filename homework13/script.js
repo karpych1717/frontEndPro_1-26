@@ -1,36 +1,40 @@
 'use strict'
 
-const taskFunctions = [taskFunction1]
-window.onload = () => setUpButtonBlock(taskFunctions)
-
-function taskFunction1 () {
-  const links = document.querySelectorAll('a.unsafe')
-  links.forEach(x => console.log(x.href))
-  
-  for (let link of links) {
-    if ( isSafe(link) ) continue
-
-  }
-}
-
-function isSafe (link) {
-  return link.indexOf('https://') === 0
-}
+window.onload = () => setUpButtonBlock()
 
 function setUpButtonBlock (taskFunctions) {
+  let ref = null
+
+  function setRef () {
+    ref = prompt('weredouwannago?', 'karpych1717.github.io/simulations')
+  }
+
+  function goRef () {
+    if (ref === null) {
+      alert('no ref availiable')
+      return
+    }
+
+    if (ref.indexOf('https://') === 0) {
+      window.open(ref, '_blank').focus()
+      return
+    }
+
+    window.open('https://' + ref, '_blank').focus()
+  }
+
   const buttonsBlock = document.getElementsByClassName('buttons-block')[0]
 
-  for (let i = 0; i < taskFunctions.length; i++) {
-    buttonsBlock.appendChild( createButton(`Task ${i + 1}`, taskFunctions[i]) )
-  }
+  buttonsBlock.appendChild( createButton('Ask', setRef) )
+  buttonsBlock.appendChild( createButton('Go', goRef) )
 }
 
 function createButton (name, taskFunction) {
   const button = document.createElement('button')
-    
+  
+  button.addEventListener('click', taskFunction)
   button.classList.add('button')
   button.textContent = name
-  button.addEventListener('click', taskFunction)
 
   return button
 }
