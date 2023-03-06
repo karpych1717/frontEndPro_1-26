@@ -6,12 +6,12 @@ function setUpButtonsBlock () {
   let ref = null
 
   function setRef () {
-    ref = prompt('weredouwannago?', 'karpych1717.github.io/simulations')
+    ref = window.prompt('weredouwannago?', 'karpych1717.github.io/simulations')
   }
 
   function goRef () {
     if (ref === null) {
-      alert('no ref availiable')
+      window.alert('no ref availiable')
       return
     }
 
@@ -25,13 +25,13 @@ function setUpButtonsBlock () {
 
   const buttonsBlock = document.getElementsByClassName('buttons-block')[0]
 
-  buttonsBlock.appendChild( createButton('Ask', setRef) )
-  buttonsBlock.appendChild( createButton('Go', goRef) )
+  buttonsBlock.appendChild(createButton('Ask', setRef))
+  buttonsBlock.appendChild(createButton('Go', goRef))
 }
 
 function createButton (name, taskFunction) {
   const button = document.createElement('button')
-  
+
   button.addEventListener('click', taskFunction)
   button.classList.add('button')
   button.textContent = name

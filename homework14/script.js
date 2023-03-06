@@ -13,10 +13,10 @@ function makeList (array) {
   const list = document.createElement('ul')
 
   for (const elem of array) {
-    list.appendChild( document.createElement('li') )
+    list.appendChild(document.createElement('li'))
 
-    if ( Array.isArray(elem) ) {
-      list.lastChild.appendChild( makeList(elem) )
+    if (Array.isArray(elem)) {
+      list.lastChild.appendChild(makeList(elem))
     } else {
       list.lastChild.innerHTML = elem
     }
@@ -29,13 +29,13 @@ function setUpButtonBlock (taskFunctions) {
   const buttonsBlock = document.getElementsByClassName('buttons-block')[0]
 
   for (let i = 0; i < taskFunctions.length; i++) {
-    buttonsBlock.appendChild( createButton(`Task ${i + 1}`, taskFunctions[i]) )
+    buttonsBlock.appendChild(createButton(`Task ${i + 1}`, taskFunctions[i]))
   }
 }
 
 function createButton (name, taskFunction) {
   const button = document.createElement('button')
-    
+
   button.classList.add('button')
   button.textContent = name
   button.addEventListener('click', taskFunction)
