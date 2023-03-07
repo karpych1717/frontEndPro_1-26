@@ -93,6 +93,15 @@ footer {
   align-items: center;
 }
 
+.task {
+  background-color: #355555;
+
+  padding: 10px;
+  margin: 5px;
+
+  border-radius: 10px;
+}
+
 .strike-text {
   text-decoration: line-through;
 }
