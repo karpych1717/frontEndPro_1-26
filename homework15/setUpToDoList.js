@@ -1,6 +1,6 @@
 'use strict'
 
-function setUpToDoList(_wrapper) {
+function setUpToDoList (_wrapper) {
   const form = document.createElement('form')
   form.classList.add('form')
   form.addEventListener('submit', addTask)
@@ -11,13 +11,17 @@ function setUpToDoList(_wrapper) {
   form.appendChild(formInput)
   // formInput.value = 'default text for debug'
 
-  const formButton = document.createElement('button')
-  formButton.type = 'button'
-  formButton.textContent = 'Add'
-  formButton.classList.add('button', 'form-button')
-  form.appendChild(formButton)
+  const submitButton = document.createElement('button')
+  submitButton.type = 'submit'
+  submitButton.textContent = 'Add'
+  submitButton.classList.add('button')
+  form.appendChild(submitButton)
 
-  formButton.addEventListener('click', addTask)
+  const resetButton = document.createElement('button')
+  resetButton.type = 'reset'
+  resetButton.textContent = 'Reset'
+  resetButton.classList.add('button')
+  form.appendChild(resetButton)
 
   _wrapper.appendChild(form)
 
@@ -27,7 +31,7 @@ function setUpToDoList(_wrapper) {
   _wrapper.appendChild(listDiv)
 }
 
-function addTask(event) {
+function addTask (event) {
   event.preventDefault()
 
   const inputText = this.closest('.form').getElementsByClassName('form-input')[0].value
@@ -42,8 +46,8 @@ function addTask(event) {
   check.classList.add('checkbox')
 
   check.addEventListener('input', function (event) {
-    this.closest('.task').getElementsByClassName('task-text')[0].
-      classList.toggle('strike-text')
+    this.closest('.task').getElementsByClassName('task-text')[0]
+      .classList.toggle('strike-text')
   })
 
   newTask.appendChild(check)
@@ -61,9 +65,9 @@ function addTask(event) {
   text.textContent = inputText.trimStart()
   text.classList.add('task-text')
   newTask.appendChild(text)
-  
-  this.closest('.list-block').
-    getElementsByClassName('task-list')[0].appendChild(newTask)
+
+  this.closest('.list-block')
+    .getElementsByClassName('task-list')[0].appendChild(newTask)
 
   this.closest('.form').getElementsByClassName('form-input')[0].value = ''
 }
