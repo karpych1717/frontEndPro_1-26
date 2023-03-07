@@ -93,6 +93,17 @@ footer {
   align-items: center;
 }
 
+.strike-text {
+  text-decoration: line-through;
+}
+
+.checkbox {
+  margin: 5px;
+}
+
+.waka {
+  margin: 0 10px;
+}
 script.to-show {
   display: block;
   
