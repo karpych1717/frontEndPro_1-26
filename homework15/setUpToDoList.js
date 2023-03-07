@@ -30,6 +30,10 @@ function setUpToDoList(_wrapper) {
 function addTask(event) {
   event.preventDefault()
 
+  const inputText = this.closest('.form').getElementsByClassName('form-input')[0].value
+
+  if (inputText.replaceAll(' ', '') === '') return
+
   const newTask = document.createElement('div')
   newTask.classList.add('task')
 
@@ -54,7 +58,7 @@ function addTask(event) {
   newTask.appendChild(delButton)
 
   const text = document.createElement('span')
-  text.textContent = this.closest('.form').getElementsByClassName('form-input')[0].value
+  text.textContent = inputText.trimStart()
   text.classList.add('task-text')
   newTask.appendChild(text)
   
