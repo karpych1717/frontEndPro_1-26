@@ -34,7 +34,7 @@ function setUpToDoList (_wrapper) {
 function addTask (event) {
   event.preventDefault()
 
-  const inputText = this.closest('.form').getElementsByClassName('form-input')[0].value
+  const inputText = this.closest('.form').querySelector('.form-input').value
 
   if (inputText.replaceAll(' ', '') === '') return
 
@@ -46,7 +46,7 @@ function addTask (event) {
   check.classList.add('checkbox')
 
   check.addEventListener('input', function (event) {
-    this.closest('.task').getElementsByClassName('task-text')[0]
+    this.closest('.task').querySelector('.task-text')
       .classList.toggle('strike-text')
   })
 
@@ -69,7 +69,7 @@ function addTask (event) {
   this.closest('.list-block')
     .getElementsByClassName('task-list')[0].appendChild(newTask)
 
-  this.closest('.form').getElementsByClassName('form-input')[0].value = ''
+  this.closest('.form').querySelector('.form-input').value = ''
 }
 
 function removeTask (event) {
