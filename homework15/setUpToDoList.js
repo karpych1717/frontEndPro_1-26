@@ -67,7 +67,7 @@ function addTask (event) {
   newTask.appendChild(text)
 
   this.closest('.list-block')
-    .getElementsByClassName('task-list')[0].appendChild(newTask)
+    .querySelector('.task-list').appendChild(newTask)
 
   this.closest('.form').querySelector('.form-input').value = ''
 }
