@@ -17,7 +17,23 @@
     <h1>ToDo List:</h1>
     <hr>
 
-    <div class='list-block'></div>
+    <div class='js--list-block list-block'>
+      <form class='js--form form'>
+        <input type='text' class='js--form-input form-input'>
+        <button type='submit' class='button'>Add</button>
+        <button type='reset' class='button'>Reset</button>
+      </form>
+
+      <div class='js--task-list task-list'>
+        <template class='js--task-template'>
+          <div class='js--task task'>
+            <input type='checkbox' class='js--checkbox'>
+            <img class='js--waka waka' src = './waka30px.png' alt='WAKA' width='20' height='20'>
+            <span class='js--task-text task-text'></span>
+          </div>
+        </template>
+      </div>
+    </div>
 
   </div>    
 </body>
