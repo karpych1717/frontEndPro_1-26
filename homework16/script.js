@@ -1,35 +1,25 @@
 'use strict'
 
-const taskFunctions = [taskFunction1]
-window.onload = () => setUpButtonBlock(taskFunctions)
+window.onload = () => setUpButtons()
 
-function taskFunction1 () {
-  const list = makeList([1, 2, [3.1, 3.2, 3.3], 4])
 
-  document.getElementById('paper').appendChild(list)
-}
 
-function makeList (array) {
-  const list = document.createElement('ul')
 
-  for (const elem of array) {
-    list.appendChild(document.createElement('li'))
 
-    if (Array.isArray(elem)) {
-      list.lastChild.appendChild(makeList(elem))
-    } else {
-      list.lastChild.innerHTML = elem
-    }
+function setUpButtons (taskFunctions) {
+  const buttonsBlock = document.getElementsByClassName('buttons-block')[0]
+  const modal = document.querySelector('.js--modal')
+
+  buttonsBlock.appendChild(createButton('Show', appear))
+  modal.getElementsByClassName('button')[0].addEventListener('click', hide)
+  modal.getElementsByClassName('button')[1].addEventListener('click', hide)
+
+  function appear () {
+    modal.style.display = 'flex'
   }
 
-  return list
-}
-
-function setUpButtonBlock (taskFunctions) {
-  const buttonsBlock = document.getElementsByClassName('buttons-block')[0]
-
-  for (let i = 0; i < taskFunctions.length; i++) {
-    buttonsBlock.appendChild(createButton(`Task ${i + 1}`, taskFunctions[i]))
+  function hide () {
+    modal.style.display = 'none'
   }
 }
 
