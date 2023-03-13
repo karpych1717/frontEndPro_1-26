@@ -1,18 +1,18 @@
 'use strict'
 
-window.onload = () => setUpButtons()
+window.onload = setUp
 
-
-
-
-
-function setUpButtons (taskFunctions) {
+function setUp () {
   const buttonsBlock = document.getElementsByClassName('buttons-block')[0]
   const modal = document.querySelector('.js--modal')
 
   buttonsBlock.appendChild(createButton('Show', appear))
+  
   modal.getElementsByClassName('button')[0].addEventListener('click', hide)
   modal.getElementsByClassName('button')[1].addEventListener('click', hide)
+  window.addEventListener('click', (event) =>{
+    if (event.target === modal) hide()
+  })
 
   function appear () {
     modal.style.display = 'flex'
