@@ -1,34 +1,60 @@
 'use strict'
 
+const pictures = new Array(4)
+
 window.onload = setUp
 
 function setUp () {
-  const buttonsBlock = document.getElementsByClassName('buttons-block')[0]
-  const modal = document.querySelector('.js--modal')
+  for (let i = 0; i < pictures.length; i++) {
+    pictures[i] = document.createElement('img')
+    pictures[i].alt = `${i + 1}.jpg`
+    pictures[i].src = `${i + 1}.jpg`
+    pictures[i].style.width = '300px'
+    pictures[i].style.height = '300px'
+  }
 
-  buttonsBlock.appendChild(createButton('Show', appear))
-  
-  modal.getElementsByClassName('button')[0].addEventListener('click', hide)
-  modal.getElementsByClassName('button')[1].addEventListener('click', hide)
-  window.addEventListener('click', (event) =>{
-    if (event.target === modal) hide()
+  const wrapper = document.querySelector('.pic-wrapper')
+
+  pictures[0].style.position = 'relative'
+  pictures[0].style.left = '0'
+  pictures[0].style.top = '0'
+  wrapper.appendChild(pictures[0])
+
+  for (let i = 1; i < pictures.length; i++) {
+    pictures[i].style.position = 'absolute'
+    pictures[i].style.left = '0'
+    pictures[i].style.top = '0'
+    pictures[i].classList.add('hide-it')
+    wrapper.appendChild(pictures[i])
+  }
+
+  wrapper.querySelector('#button-left').classList.add('hide-it')
+
+  wrapper.querySelector('#button-right').addEventListener('click', function (event) {
+    this.closest('.pic-wrapper').querySelector('#button-left')
+      .classList.remove('hide-it')
+
+    for (let i = 1; i < pictures.length; i++) {
+      if (i === pictures.length - 1) this.classList.add('hide-it')
+
+      if (pictures[i].classList.contains('hide-it')) {
+        pictures[i].classList.remove('hide-it')
+        break
+      }
+    }
   })
 
-  function appear () {
-    modal.style.display = 'flex'
-  }
+  wrapper.querySelector('#button-left').addEventListener('click', function (event) {
+    this.closest('.pic-wrapper').querySelector('#button-right')
+      .classList.remove('hide-it')
 
-  function hide () {
-    modal.style.display = 'none'
-  }
-}
+    for (let i = pictures.length - 1; i > 0; i--) {
+      if (i === 1) this.classList.add('hide-it')
 
-function createButton (name, taskFunction) {
-  const button = document.createElement('button')
-
-  button.classList.add('button')
-  button.textContent = name
-  button.addEventListener('click', taskFunction)
-
-  return button
+      if (!pictures[i].classList.contains('hide-it')) {
+        pictures[i].classList.add('hide-it')
+        break
+      }
+    }
+  })
 }
