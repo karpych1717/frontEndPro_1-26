@@ -15,6 +15,17 @@ th {
   padding: 0 15px;
 }
 
+td {
+  padding: 5px 20px;
+
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+
+  font-family: 'Georgia', sans-serif;
+  font-size: 100%;
+  color: #e3fce5;
+}
+
 .card {
   margin: 20px auto;
   padding: 10px 20px;

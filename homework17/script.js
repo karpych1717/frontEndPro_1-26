@@ -1,3 +1,3 @@
-import setUp from './app'
+import setUp from './app.js'
 
-window.onload = setUp
+window.onload = () => setUp(document.querySelector('.js--app-wrapper'))
