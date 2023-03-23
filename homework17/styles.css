@@ -26,6 +26,10 @@ td {
   color: #e3fce5;
 }
 
+.js--editing {
+  background-color: #375e5e;
+}
+
 .card {
   margin: 20px auto;
   padding: 10px 20px;
