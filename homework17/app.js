@@ -8,8 +8,13 @@ function setUp (appWrapper) {
         this,
         this.elements['name'].value,
         this.elements['phone'].value,
-        this.elements['age'].value
+        +this.elements['age'].value
     )
+  })
+
+  appWrapper.querySelector('.js--add-button').addEventListener('click', function () {
+    this.closest('.js--app-wrapper').querySelector('.js--form')
+      .classList.remove('js--hidden')
   })
 }
 
@@ -29,6 +34,27 @@ function addUser (name, phone, age) {
   const currentUsers = JSON.parse(localStorage.getItem('users')) || []
 
   currentUsers.push(user)
+  localStorage.setItem('users', JSON.stringify(currentUsers))
+
+  this.classList.add('js--hidden')
+  console.log(this.classList)
+}
+
+function removeUser (id) {
+  const currentUsers = JSON.parse(localStorage.getItem('users'))
+
+  let index = -1
+
+  for (let i = 0; i < currentUsers.length; i++) {
+    if (currentUsers[i].id === id) {
+      index = i
+      break
+    }
+  }
+
+  if (index === -1) return
+
+  currentUsers.splice(index, 1)
   localStorage.setItem('users', JSON.stringify(currentUsers))
 }
 
@@ -51,6 +77,14 @@ function addRow(table, user) {
   newRow.querySelector('.js--user-name').innerHTML = user.name
   newRow.querySelector('.js--user-phone').innerHTML = user.phone
   newRow.querySelector('.js--user-age').innerHTML = user.age
+
+  newRow.querySelector('.js--delete-button').addEventListener('click', function (event) {
+    const thisRow = this.closest('tr')
+    const id = +thisRow.querySelector('.js--user-id').innerHTML
+
+    thisRow.remove()
+    removeUser(id)
+  })
 
   table.appendChild(newRow)
 }

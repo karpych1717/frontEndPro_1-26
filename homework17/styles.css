@@ -50,3 +50,40 @@ td {
 .button {
   border-radius: 10px;
 }
+
+.delete-button {
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: #FA745A;
+
+  color:azure;
+
+  min-width: 50px;
+}
+
+.edit-button {
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: #cab91d;
+
+  color:azure;
+
+  min-width: 50px;
+}
+
+.view-button {
+  border: none;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: #4CAF50;
+
+  color:azure;
+
+  min-width: 50px;
+}
+
+.js--hidden {
+  display: none !important;
+}
