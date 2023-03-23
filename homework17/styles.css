@@ -84,6 +84,23 @@ td {
   min-width: 50px;
 }
 
+.buttons-container {
+  display: inline-block;
+  text-align: center;
+}
+
+.save-button {
+  width: 40%;
+
+  background-color: #cab91d;
+}
+
+.discard-button {
+  width: 40%;
+
+  background-color: #FA745A;
+}
+
 .js--hidden {
   display: none !important;
 }

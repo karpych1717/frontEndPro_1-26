@@ -45,16 +45,29 @@
             </template>
           </tbody>
       </table>
-      <div class='card'>
-          <button class='js--add-button button'>Add user</button>
+
+      <div class='js--add-button-card card'>
+          <button class='js--new-button button'>Add user</button>
       </div>
-      <form class='js--form js--hidden card'>
+
+      <form class='js--add-form js--hidden card'>
           <input type='hidden' name='id'>
           <input class='form-control' type='text' name='name' placeholder='Name' required>
           <input class='form-control' type='text' name='phone' placeholder='Phone' required>
           <input class='form-control' type='number' name='age' placeholder='Age' min='18' required>
-          <button class='js--submit-button button' type='submit'>Add</button>
+          <button class='js--add-button button' type='submit'>Add</button>
       </form>
+
+      <form class='js--edit-form js--hidden card'>
+        <input type='hidden' name='id'>
+        <input class='form-control' type='text' name='name' placeholder='Name' required>
+        <input class='form-control' type='text' name='phone' placeholder='Phone' required>
+        <input class='form-control' type='number' name='age' placeholder='Age' min='18' required>
+        <div class='buttons-container'>
+          <button class='js--save-button save-button button' type='submit'>Save</button>
+          <button class='js--discard-button discard-button button' type='reset'>Discard</button>
+        </div>
+    </form>
   </div>
   </div>    
 </body>

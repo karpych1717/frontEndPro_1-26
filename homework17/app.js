@@ -1,43 +1,44 @@
 function setUp (appWrapper) {
   loadTableTo(appWrapper)
 
-  appWrapper.querySelector('.js--form').addEventListener('submit', function (event) {
-    event.preventDefault();
-    console.log('uwu')
-    addUser.call(
-        this,
-        this.elements['name'].value,
-        this.elements['phone'].value,
-        +this.elements['age'].value
-    )
+  const addButtonCard = appWrapper.querySelector('.js--add-button-card')
+  const addForm = appWrapper.querySelector('.js--add-form')
+  const editForm = appWrapper.querySelector('.js--edit-form')
+  const table = appWrapper.querySelector('.js--content')
+
+  appWrapper.querySelector('.js--new-button').addEventListener('click', function () {
+    addButtonCard.classList.add('js--hidden')
+
+    addForm.classList.remove('js--hidden')
+
+    editForm.classList.add('js--hidden')
   })
 
-  appWrapper.querySelector('.js--add-button').addEventListener('click', function () {
-    this.closest('.js--app-wrapper').querySelector('.js--form')
-      .classList.remove('js--hidden')
+  appWrapper.querySelector('.js--add-form').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const newUser = {
+      id: Math.floor(Math.random() * 10000),
+      name: this.elements['name'].value,
+      phone: this.elements['phone'].value,
+      age: +this.elements['age'].value
+    }
+
+    addUser(newUser)
+    addRow(table, newUser)
+
+    this.reset()
+
+    this.classList.add('js--hidden')
+    addButtonCard.classList.remove('js--hidden')
   })
 }
 
-function addUser (name, phone, age) {
-
-  const user = {
-    id: Math.floor(Math.random() * 10000),
-    name,
-    phone,
-    age
-  }
-  console.log(this.closest('.js--app-wrapper'))
-
-  const table = this.closest('.js--app-wrapper').querySelector('.js--content')
-  addRow(table, user)
-
+function addUser (user) {
   const currentUsers = JSON.parse(localStorage.getItem('users')) || []
 
   currentUsers.push(user)
   localStorage.setItem('users', JSON.stringify(currentUsers))
-
-  this.classList.add('js--hidden')
-  console.log(this.classList)
 }
 
 function removeUser (id) {
@@ -71,12 +72,25 @@ function loadTableTo (appWrapper) {
 
 function addRow(table, user) {
   const newRow = table.querySelector('.js--row-template').content.cloneNode(true)
-  console.log('new', newRow)
 
   newRow.querySelector('.js--user-id').innerHTML = user.id
   newRow.querySelector('.js--user-name').innerHTML = user.name
   newRow.querySelector('.js--user-phone').innerHTML = user.phone
   newRow.querySelector('.js--user-age').innerHTML = user.age
+
+  newRow.querySelector('.js--edit-button').addEventListener('click', function (event) {
+    const thisRow = this.closest('tr')
+    const id = +thisRow.querySelector('.js--user-id').innerHTML
+
+    this.closest('.js--app-wrapper').querySelector('.js--add-button-card')
+      .classList.add('js--hidden')
+
+    this.closest('.js--app-wrapper').querySelector('.js--add-form')
+      .classList.add('js--hidden')
+  
+    this.closest('.js--app-wrapper').querySelector('.js--edit-form')
+      .classList.remove('js--hidden')
+  })
 
   newRow.querySelector('.js--delete-button').addEventListener('click', function (event) {
     const thisRow = this.closest('tr')
