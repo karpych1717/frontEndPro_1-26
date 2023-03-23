@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HW17 by Vlad Karpenko</title>
+  <link rel='icon' type='image/png' href='../resources/logo.png'>
+
+  <link rel='stylesheet' type='text/css' href='../resources/styles.css'>
+  <link rel='stylesheet' type='text/css' href='./styles.css'>
+  <script src='./script.js'></script>
+</head>
+
+<body>
+  <div id='paper'>
+    <a href='../index.html'> &lt;-- Back</a>
+    <br>
+    <br>
+    
+    <hr>
+
+    <div class='js--app-wrapper app-wrapper'>
+      <table class='js--table table'>
+          <thead>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Age</th>
+              <th>Actions</th>
+          </thead>
+          <tbody class='js--content'>
+            <template>
+              <tr>
+                <th class='js--id'></th>
+                <th class='js--name'></th>
+                <th class='js--phone'></th>
+                <th class='js--age'></th>
+                <th class='js--actions'>
+                  <button class='js--view-button view-button'>View</button>
+                  <button class='js--edit-button edit-button'>Edit</button>
+                  <button class='js--delete-button delete-button'>Delete</button>
+                </th>
+              </tr>
+            </template>
+          </tbody>
+      </table>
+      <div class='card'>
+          <button class='js--add-button button'>Add user</button>
+      </div>
+      <form class='js--form card'>
+          <input type='hidden' name='id'>
+          <input class='form-control' type='text' name='name' placeholder='Name' required>
+          <input class='form-control' type='text' name='phone' placeholder='Phone' required>
+          <input class='form-control' type='number' name='age' placeholder='Age' min='18' required>
+          <button class='js--submit-button button' type='submit'>OK</button>
+      </form>
+  </div>
+  </div>    
+</body>
+
+</html>
