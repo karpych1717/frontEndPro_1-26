@@ -21,7 +21,7 @@ function setUp (appWrapper) {
   })
 
   addForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+    event.preventDefault()
 
     const newUser = {
       id: Math.floor(Math.random() * 10000),
@@ -76,7 +76,7 @@ function setUp (appWrapper) {
 
 function editButtonAction () {
   const appWrapper = this.closest('.js--app-wrapper')
-  
+
   appWrapper.querySelector('.js--add-button-card')
     .classList.add('js--hidden')
 
@@ -114,30 +114,30 @@ function deleteButtonAction () {
 }
 
 function addLocalUser (user) {
-  const currentUsers = JSON.parse(localStorage.getItem('users')) || []
+  const currentUsers = JSON.parse(window.localStorage.getItem('users')) || []
 
   currentUsers.push(user)
-  localStorage.setItem('users', JSON.stringify(currentUsers))
+  window.localStorage.setItem('users', JSON.stringify(currentUsers))
 }
 
 function removeLocalUser (id) {
-  const currentUsers = JSON.parse(localStorage.getItem('users'))
+  const currentUsers = JSON.parse(window.localStorage.getItem('users'))
 
-  let index = getLocalUserIndex(currentUsers, id)
+  const index = getLocalUserIndex(currentUsers, id)
 
   if (index === -1) return
 
   currentUsers.splice(index, 1)
-  localStorage.setItem('users', JSON.stringify(currentUsers))
+  window.localStorage.setItem('users', JSON.stringify(currentUsers))
 }
 
 function rewriteLocalUser (id, newUser) {
-  const currentUsers = JSON.parse(localStorage.getItem('users'))
+  const currentUsers = JSON.parse(window.localStorage.getItem('users'))
 
-  let index = getLocalUserIndex(currentUsers, id)
+  const index = getLocalUserIndex(currentUsers, id)
 
   currentUsers[index] = newUser
-  localStorage.setItem('users', JSON.stringify(currentUsers))
+  window.localStorage.setItem('users', JSON.stringify(currentUsers))
 }
 
 function getLocalUserIndex(users, id) {
@@ -154,7 +154,7 @@ function getLocalUserIndex(users, id) {
 }
 
 function loadTableTo (appWrapper) {
-  const users = JSON.parse(localStorage.getItem('users'))
+  const users = JSON.parse(window.localStorage.getItem('users'))
 
   if (users === null) return
 
