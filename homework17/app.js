@@ -40,7 +40,7 @@ function setUp (appWrapper) {
   })
 
   editForm.addEventListener('submit', function (event) {
-    event.preventDefault();
+    event.preventDefault()
 
     const newUser = {
       id: +this.elements['id'].value,
