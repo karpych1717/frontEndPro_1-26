@@ -20,7 +20,7 @@ function setUp () {
     modalPic.attr('src', event.target.src)
   })
 
-  modal.find('.js--modal__close:first').on('click', function () {
+  modal.find('.js--modal__close').on('click', function () {
     modal.removeClass('active')
   })
 
