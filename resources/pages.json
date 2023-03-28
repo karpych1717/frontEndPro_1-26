@@ -1,0 +1,173 @@
+[
+  {
+    "lesson": "Lesson 2",
+    "homework": 
+      [
+        { "name": "Homework 1", "url": "./homework1/index.html" }
+      ],
+    "practice":
+      [
+        
+      ]
+  },
+
+  {
+    "lesson": "Lesson 3",
+    "homework": 
+      [
+        { "name": "Homework 2", "url": "./homework2/index.html" },
+        { "name": "Homework 3", "url": "./homework3/index.html"}
+      ],
+    "practice":
+      [
+        { "name": "Practice", "url": "./lesson3/index.html" }
+      ]
+  },
+
+  {
+    "lesson": "Lesson 4",
+    "homework": 
+      [
+        { "name": "Homework 4", "url": "./homework4/index.html" },
+        { "name": "Homework 5", "url": "./homework5/index.html" }
+      ],
+    "practice":
+      [
+        
+      ]
+  },
+
+  {
+    "lesson": "Lesson 5",
+    "homework": 
+      [
+        { "name": "Homework 6", "url": "./homework6/index.html" }
+      ],
+    "practice":
+      [
+        
+      ]
+  },
+
+  {
+    "lesson": "Lesson 6",
+    "homework": 
+      [
+        { "name": "Homework 7", "url": "./homework7/index.html" }
+      ],
+    "practice":
+      [
+        
+      ]
+  },
+
+  {
+    "lesson": "Lesson 7",
+    "homework": 
+      [
+        { "name": "Homework 8", "url": "./homework8/index.html" }
+      ],
+    "practice":
+      [
+        
+      ]
+  },
+
+  {
+    "lesson": "Lesson 9",
+    "homework": 
+      [
+        { "name": "Homework 9", "url": "./homework9/index.html" }
+      ],
+    "practice":
+      [
+        
+      ]
+  },
+
+  {
+    "lesson": "Lesson 10",
+    "homework": 
+      [
+        { "name": "Homework 10", "url": "./homework10/index.html" }
+      ],
+    "practice":
+      [
+
+      ]
+  },
+
+  {
+    "lesson": "Lesson 11",
+    "homework": 
+      [
+        { "name": "Homework 11", "url": "./homework11/index.html" },
+        { "name": "Homework 12", "url": "./homework12/index.html" }
+      ],
+    "practice":
+      [
+        
+      ]
+  },
+
+  {
+    "lesson": "Lesson 12",
+    "homework": 
+      [
+        { "name": "Homework 13", "url": "./homework13/index.html" },
+        { "name": "Homework 14", "url": "./homework14/index.html" }
+      ],
+    "practice":
+      [
+        
+      ]
+  },
+
+  {
+    "lesson": "Lesson 13",
+    "homework": 
+      [
+        { "name": "Homework 15 (toDo list v0.2)", "url": "./homework2/index.html" }
+      ],
+    "practice":
+      [
+        { "name": "Practice", "url": "./lesson13/index.html" }
+      ]
+  },
+
+  {
+    "lesson": "Lesson 14",
+    "homework": 
+      [
+        { "name": "Homework 16", "url": "./homework16/index.html" }
+      ],
+    "practice":
+      [
+        { "name": "Practice", "url": "./lesson14/index.html" }
+      ]
+  },
+
+  {
+    "lesson": "Lesson 16",
+    "homework": 
+      [
+        { "name": "Homework 17", "url": "./homework17/index.html" }
+      ],
+    "practice":
+      [
+        
+      ]
+  },
+
+  {
+    "lesson": "Lesson 17",
+    "homework": 
+      [
+        { "name": "Homework 18", "url": "./homework18/index.html" }
+      ],
+    "practice":
+      [
+        { "name": "Practice (Closure)", "url": "./lesson17/index.html" }
+      ]
+  }
+]
