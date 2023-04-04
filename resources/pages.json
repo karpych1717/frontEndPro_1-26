@@ -181,5 +181,17 @@
       [
         { "name": "Practice (Closure)", "url": "./lesson18/index.html" }
       ]
+  },
+
+  {
+    "lesson": "Lesson 19",
+    "homework": 
+      [
+        { "name": "Homework 20", "url": "./homework20/index.html" }
+      ],
+    "practice":
+      [
+        
+      ]
   }
 ]
