@@ -193,5 +193,17 @@
       [
         
       ]
+  },
+
+  {
+    "lesson": "Lesson 20",
+    "homework": 
+      [
+        { "name": "Homework 21", "url": "./homework21/index.html" }
+      ],
+    "practice":
+      [
+        
+      ]
   }
 ]
