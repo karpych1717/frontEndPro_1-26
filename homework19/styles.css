@@ -1,0 +1,26 @@
+.form-password {
+  text-align: center;
+
+  width: 280px;
+
+  margin: 0 auto;
+}
+.input-password {
+  display: block;
+
+  width: 100%;
+}
+.erors > li {
+  text-align: left;
+  font-size: medium;
+  
+  color: red;
+}
+
+.js--hidden {
+  display: none;
+}
+
+.form-buttons {
+  display: block;
+}

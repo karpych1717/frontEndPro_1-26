@@ -175,7 +175,7 @@
     "lesson": "Lesson 18",
     "homework": 
       [
-        
+        { "name": "Homework 19", "url": "./homework19/index.html" }
       ],
     "practice":
       [
