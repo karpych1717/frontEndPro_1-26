@@ -65,11 +65,11 @@ Student.prototype.summary = function () {
 
   const presenceVolume = presenceAmount / lessonsAmount
 
-  if (avarageMark > 90 && presenceVolume > 90) {
+  if (avarageMark > 90 && presenceVolume > 0.9) {
     return 'Molodets!'
   }
 
-  if (avarageMark > 90 || presenceVolume > 90) {
+  if (avarageMark > 90 || presenceVolume > 0.9) {
     return 'Dobre, ale mozhna krasche.'
   }
 
