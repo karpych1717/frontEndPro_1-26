@@ -1,6 +1,5 @@
 'use strict'
 
-
 function Student (fullName, birthDay, marks) {
   this.name = fullName.name
   this.surname = fullName.surname
@@ -75,3 +74,7 @@ Student.prototype.summary = function () {
 
   return 'Redyska!'
 }
+
+const student1 = new Student({name: 'Vasya', surname: 'Poopkeen'}, new Date('1991-05-08'), [100, 80, 10])
+const student2 = new Student({name: 'Petya', surname: 'Nagibator'}, new Date('1993-02-01'), [100, 90, 100, 99])
+const student3 = new Student({name: 'Seryozha', surname: 'Ivanov'}, new Date('1998-10-7'), [100, 65, 100])
