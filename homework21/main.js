@@ -41,8 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
     fetch(path, { method: 'GET' })
     .then(responce => responce.json())
     .then(data => {
-      console.log(data)
-
       weather = `Температура в Києві складає ${data.main.temp} градусів, ` +
         `атмосферний тиск - ${data.main.pressure} мм.рт.ст., ` +
         `вологість поітря - ${data.main.humidity}%, ` +
@@ -53,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       const wrapper = span.closest('div')
       wrapper.prepend(document.createElement('br'))
-      
+
       wrapper.prepend((() => {
         const icon = document.createElement('img')
         icon.src = iconRef.href
