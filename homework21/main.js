@@ -31,12 +31,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelector('button').addEventListener('click', function () {
     const span = document.querySelector('span')
-
-    let path = new URL('?q=KYIV&units=metric&APPID=5d066958a60d315387d9492393935c19',
-      'http://api.openweathermap.org/data/2.5/weather')
+    const wrapper = span.closest('div')
 
     let weather
     let iconRef = new URL('https://openweathermap.org')
+
+    let path = new URL('?q=KYIV&units=metric&APPID=5d066958a60d315387d9492393935c19',
+      'http://api.openweathermap.org/data/2.5/weather')
     
     fetch(path, { method: 'GET' })
     .then(responce => responce.json())
@@ -49,7 +50,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       iconRef = new URL ( `/img/w/${data.weather[0].icon}.png`, iconRef)
 
-      const wrapper = span.closest('div')
       wrapper.prepend(document.createElement('br'))
 
       wrapper.prepend((() => {
