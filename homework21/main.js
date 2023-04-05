@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let iconRef = new URL('https://openweathermap.org')
 
     let path = new URL('?q=KYIV&units=metric&APPID=5d066958a60d315387d9492393935c19',
-      'http://api.openweathermap.org/data/2.5/weather')
+      'https://api.openweathermap.org/data/2.5/weather')
     
     fetch(path, { method: 'GET' })
     .then(responce => responce.json())
