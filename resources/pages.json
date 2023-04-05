@@ -203,7 +203,7 @@
       ],
     "practice":
       [
-        
+        { "name": "Practice (Blocking Call Stack)", "url": "./lesson20/index.html" }
       ]
   }
 ]
