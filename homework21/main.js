@@ -52,8 +52,8 @@ function main () {
           `напрямок вітру - ${degToWord(data.wind.deg)}.`
 
         iconRef = new URL(
-        `/img/w/${data.weather[0].icon}.png`,
-        'https://openweathermap.org'
+          `/img/w/${data.weather[0].icon}.png`,
+          'https://openweathermap.org'
         )
 
         span.textContent = weather
