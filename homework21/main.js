@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(responce => responce.json())
     .then(data => {
       weather = `Температура в Києві складає ${data.main.temp} градусів, ` +
-        `атмосферний тиск - ${data.main.pressure} мм.рт.ст., ` +
-        `вологість поітря - ${data.main.humidity}%, ` +
+        `атмосферний тиск - ${Math.round(data.main.pressure / 1000 * 760)} мм.рт.ст., ` +
+        `вологість повітря - ${data.main.humidity}%, ` +
         `швидкість вітру - ${data.wind.speed} м/с, ` +
         `напрямок вітру - ${degToWord(data.wind.deg)}.`
 
