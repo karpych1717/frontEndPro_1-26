@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelector('button').addEventListener('click', function () {
     const span = document.querySelector('span')
     const wrapper = span.closest('div')
+    const pic = wrapper.querySelector('img')
 
     let weather
     let iconRef = new URL('https://openweathermap.org')
@@ -50,13 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       iconRef = new URL ( `/img/w/${data.weather[0].icon}.png`, iconRef)
 
-      wrapper.prepend(document.createElement('br'))
-
-      wrapper.prepend((() => {
-        const icon = document.createElement('img')
-        icon.src = iconRef.href
-        return icon
-      })())
+      pic.src = iconRef.href
 
       span.textContent = weather
     })
