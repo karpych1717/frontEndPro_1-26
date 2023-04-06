@@ -2,13 +2,13 @@
 
 window.addEventListener('DOMContentLoaded', main)
 
-function main() {
+function main () {
   const form = document.querySelector('.js--form-password')
   const erors = form.querySelector('.erors').querySelectorAll('li')
 
   const regBigLetter = /[A-Z]/
   const regNumber = /[0-9]/
-  const regSym = /[\W]/
+  const regSym = /\W/
 
   form.addEventListener('reset', function () {
     erors.forEach(span => {
@@ -26,7 +26,7 @@ function main() {
     const password = form.querySelector('input').value
 
     if (password.length === 0) {
-      alert('there is no input')
+      window.alert('there is no input')
       return
     }
 
@@ -35,7 +35,7 @@ function main() {
     if (!regBigLetter.test(password)) {
       erors[0].classList.remove('js--hidden')
       isValid = false
-    } 
+    }
     if (!regNumber.test(password)) {
       erors[1].classList.remove('js--hidden')
       isValid = false
