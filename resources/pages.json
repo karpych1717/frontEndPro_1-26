@@ -205,5 +205,17 @@
       [
         { "name": "Practice (Blocking Call Stack)", "url": "./lesson20/index.html" }
       ]
+  },
+
+  {
+    "lesson": "Lesson 21",
+    "homework": 
+      [
+        { "name": "Homework 22", "url": "./homework22/index.html" }
+      ],
+    "practice":
+      [
+        
+      ]
   }
 ]
