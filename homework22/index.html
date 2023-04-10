@@ -6,6 +6,7 @@
   <link rel='icon' type='image/png' href='../resources/logo.png'>
 
   <link rel='stylesheet' type='text/css' href='../resources/styles.css'>
+  <link rel='stylesheet' type='text/css' href='styles.css'>
 
   <script type='module' src="./main.js"></script>
 </head>
@@ -16,10 +17,28 @@
     <br>
     <br>
 
-    <div class='js--app app'>
-      
-    </div>
-
+    <section class='js--app app'>
+      <form class='js--form form'>
+        <input type='number'></input>
+        <span class='js--form-error form-error js--hidden'>Eror</span>
+        <button type='submit' class='button'>Search it</button>
+      </form>
+      <article class='js--post post js--hidden'>
+        <div class='js--post-text post-text'>
+          <p></p>
+          <button class='js--show-comments'>Show comments</button>
+        </div>
+        <div class='js--comments'>
+          <template class='js--comment-template'>
+            <div class='js--comment comment'>
+              <p class='js--comment-name comment-name'></p>
+              <p class='js--comment-mail comment-mail'></p>
+              <p class='js--comment-body comment-body'></p>
+            </div>
+          </template>
+        </div>
+      </article>
+    </section>
   </div>    
 </body>
 
