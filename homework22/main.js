@@ -25,7 +25,7 @@ function main () {
     }
 
     if (postID < 1 || postID > 100) {
-      erorSpan.innerHTML = 'ID is out of range'
+      erorSpan.innerHTML = 'invalid ID'
       erorSpan.classList.remove('js--hidden')
       return
     }

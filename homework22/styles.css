@@ -1,3 +1,45 @@
 .js--hidden {
-  display: none;
+  display: none !important;
+}
+
+input {
+  display: inline-block;
+}
+
+.form {
+  display: block !important;
+  text-align: center;
+}
+
+.button {
+  display: inline-block !important;
+}
+
+.form-error {
+  display: block;
+  margin: 10px;
+  color: red;
+}
+
+.post-text {
+  text-align: center;
+
+  margin: 5px;
+  padding: 10px;
+
+  background-color: #2c4949;
+}
+
+.comment {
+  text-align: center;
+
+  margin: 25px;
+  padding: 10px;
+
+  color: #cfca95;
+  background-color: #355959;
+}
+
+.comment-email {
+  font-family: monospace;
 }
