@@ -37,6 +37,7 @@ function main () {
 
         post.classList.remove('js--hidden')
       })
+      .catch(error => console.error(error))
 
     if (isVisible(comments)) {
       comments.classList.add('js--hidden')
@@ -67,6 +68,7 @@ function main () {
 
         comments.classList.remove('js--hidden')
       })
+      .catch(error => console.error(error))
   })
 }
 
