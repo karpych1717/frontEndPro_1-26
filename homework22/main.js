@@ -8,7 +8,9 @@ function main () {
 
   const postText = post.querySelector('.js--post-text')
   const comments = post.querySelector('.js--comments')
+  const commentTemplate = comments.querySelector('.js--comment-template')
 
+  const sourcePath = new URL('https://jsonplaceholder.typicode.com')
   let postID
 
   form.addEventListener('submit', function (event) {
@@ -16,20 +18,60 @@ function main () {
     erorSpan.classList.add('js--hidden')    
     postID = +form.elements[0].value
 
-    if (Number.isNaN(input)) {
+    if (Number.isNaN(postID)) {
       erorSpan.innerHTML = 'Input is NaN'
       erorSpan.classList.remove('js--hidden')
       return
     }
 
-    if (input < 1 || input > 100) {
+    if (postID < 1 || postID > 100) {
       erorSpan.innerHTML = 'ID is out of range'
       erorSpan.classList.remove('js--hidden')
       return
     }
     
-    
+    fetch(new URL(`posts/${postID}`, sourcePath), { method: 'GET' })
+      .then(responce => responce.json())
+      .then(data => {
+        postText.querySelector('p').innerHTML = data.body
+
+        post.classList.remove('js--hidden')
+      })
+
+    if (isVisible(comments)) {
+      comments.classList.add('js--hidden')
+
+      const commentsToRemove = comments.querySelectorAll(':scope > .js--comment')
+
+      if (commentsToRemove.length > 0) {
+        commentsToRemove.forEach(comment => comment.remove())
+      }
+    }
   })
+
+  post.querySelector('.js--show-comments').addEventListener('click', function () {
+    if (isVisible(comments)) return
+
+    fetch(new URL(`posts/${postID}/comments`, sourcePath))
+      .then(responce => responce.json())
+      .then(data => {
+        data.forEach(comment => {
+          const newComment = commentTemplate.content.cloneNode(true)
+
+          newComment.querySelector('.js--comment-name').innerHTML = comment.name
+          newComment.querySelector('.js--comment-email').innerHTML = comment.email
+          newComment.querySelector('.js--comment-body').innerHTML = comment.body
+
+          comments.appendChild(newComment)
+        })
+
+        comments.classList.remove('js--hidden')
+      })
+  })
+}
+
+function isVisible (node) {
+  return !node.matches('.js--hidden')
 }
 
 document.addEventListener('DOMContentLoaded', main)
