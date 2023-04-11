@@ -15,7 +15,7 @@ function main () {
 
   form.addEventListener('submit', function (event) {
     event.preventDefault()
-    erorSpan.classList.add('js--hidden')    
+    erorSpan.classList.add('js--hidden')
     postID = +form.elements[0].value
 
     if (Number.isNaN(postID)) {
@@ -29,7 +29,7 @@ function main () {
       erorSpan.classList.remove('js--hidden')
       return
     }
-    
+
     fetch(new URL(`posts/${postID}`, sourcePath), { method: 'GET' })
       .then(responce => responce.json())
       .then(data => {
@@ -42,11 +42,9 @@ function main () {
     if (isVisible(comments)) {
       comments.classList.add('js--hidden')
 
-      const commentsToRemove = comments.querySelectorAll(':scope > .js--comment')
-
-      if (commentsToRemove.length > 0) {
-        commentsToRemove.forEach(comment => comment.remove())
-      }
+      comments
+        .querySelectorAll(':scope > .js--comment')
+        .forEach(comment => comment.remove())
     }
   })
 
