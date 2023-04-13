@@ -51,7 +51,7 @@ function main () {
   post.querySelector('.js--show-comments').addEventListener('click', function () {
     if (isVisible(comments)) return
 
-    fetch(new URL(`posts/${postID}/comments`, sourcePath))
+    fetch(new URL(`posts/${postID}/comments`, sourcePath), { method: 'GET' })
       .then(responce => responce.json())
       .then(data => {
         data.forEach(comment => {
