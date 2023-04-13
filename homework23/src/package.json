@@ -1,0 +1,17 @@
+{
+  "name": "homework23",
+  "version": "1.0.0",
+  "description": "'gulp intro'",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp"
+  ],
+  "author": "'i am'",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
