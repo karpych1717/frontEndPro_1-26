@@ -12,6 +12,9 @@
   "author": "'i am'",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "@babel/core": "^7.21.4",
+    "@babel/preset-env": "^7.21.4",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0"
   }
 }
