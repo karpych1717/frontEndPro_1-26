@@ -174,3 +174,5 @@ function addRow (table, user) {
 
   table.appendChild(newRow)
 }
+
+export default setUp
