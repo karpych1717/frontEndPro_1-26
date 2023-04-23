@@ -1,0 +1,154 @@
+body {
+  font-family: 'Georgia', sans-serif;
+  font-size: 120%;
+  color: #eee8aa;
+
+  background-color: #000000;
+}
+
+#paper {
+  width: 900px;
+
+  margin: 30px auto 30px;
+  padding: 30px 30px 30px 60px;
+
+  background-color: #203535;
+}
+
+#name {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.info-text {
+  margin: 10px;
+
+  line-height: 1.4;
+}
+
+a, a:visited, a:hover, a:active {
+  color: #8ab4f8;
+  text-underline-position: under;
+}
+
+.paragraph {
+  margin-top: -10px;
+}
+
+.paragraph > ul {
+  padding-left: 2em;
+  line-height: 1.3;
+  margin-bottom: 25px;
+}
+
+.paragraph > h3 {
+  margin-bottom: 0px;
+  cursor: pointer;
+
+  max-width: 170px;
+}
+
+.inactive {
+  display: none;
+}
+
+footer {
+  text-align: center;
+}
+
+.buttons-block {
+  text-align: center;
+
+  background-color: #355555;
+}
+
+.button {
+  background-color: #4CAF50;
+  transition-duration: 0.4s;
+
+  border: none;
+  border-radius: 2px;
+  margin: 20px 10px 20px;
+
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.form-input {
+  flex: 1;
+
+  padding-left: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+
+  height: 32px;
+
+  font-size: 16px;
+}
+
+.form-input:focus {
+  border: 2px solid #69bd6c;
+  outline: none;
+}
+
+.button:hover {
+  background-color: #69bd6c; /* Green */
+  color: #ffffff;
+}
+
+.form {
+  display: flex;
+
+  align-items: center;
+}
+
+.task {
+  background-color: #355555;
+
+  padding: 10px;
+  margin: 5px;
+
+  border-radius: 10px;
+}
+
+.strike-text {
+  text-decoration: line-through;
+}
+
+.checkbox {
+  margin: 5px;
+}
+
+.waka {
+  margin: 0 10px;
+}
+
+script.to-show {
+  display: block;
+  
+  font-family: monospace;
+
+  white-space: pre;
+}
+
+ul.pages-list {
+  list-style-type: none;
+  padding-left: 0;
+
+  min-height: 400px;
+}
+
+li.page {
+  margin-left: 0;
+}
+
+li.page::before {
+  content: '\2022';
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
