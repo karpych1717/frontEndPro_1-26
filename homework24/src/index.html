@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>HW17 by Vlad Karpenko</title>
+  <link rel='icon' type='image/png' href='../resources/logo.png'>
+
+  <link rel='stylesheet' type='text/css' href='../resources/styles.css'>
+  <link rel='stylesheet' type='text/css' href='./styles.css'>
+  
+  <script type='text/javascript' src='./index.js'></script>
+</head>
+
+<body>
+  <div id='paper'>
+    <a href='../index.html'> &lt;-- Back</a>
+    <br>
+    <br>
+    
+    <hr>
+
+    <div class='js--app-wrapper app-wrapper'>
+      <table class='js--table table'>
+          <thead>
+              <th>Id</th>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Age</th>
+              <th>Actions</th>
+          </thead>
+          <tbody class='js--content'>
+            <template class='js--row-template'>
+              <tr>
+                <td class='js--user-id'></td>
+                <td class='js--user-name'></td>
+                <td class='js--user-phone'></td>
+                <td class='js--user-age'></td>
+                <td class='js--actions'>
+                  <button class='view-button' data-action='view'>View</button>
+                  <button class='edit-button' data-action='edit'>Edit</button>
+                  <button class='delete-button' data-action='delete'>Delete</button>
+                </td>
+              </tr>
+            </template>
+          </tbody>
+      </table>
+
+      <div class='js--add-button-card card'>
+          <button class='js--new-button button'>Add user</button>
+      </div>
+
+      <form class='js--add-form js--hidden card'>
+          <input type='hidden' name='id'>
+          <input class='form-control' type='text' name='name' placeholder='Name' required>
+          <input class='form-control' type='text' name='phone' placeholder='Phone' required>
+          <input class='form-control' type='number' name='age' placeholder='Age' min='18' required>
+          <button class='js--add-button button' type='submit'>Add</button>
+      </form>
+
+      <form class='js--edit-form js--hidden card'>
+        <input type='hidden' name='id'>
+        <input class='form-control' type='text' name='name' placeholder='Name' required>
+        <input class='form-control' type='text' name='phone' placeholder='Phone' required>
+        <input class='form-control' type='number' name='age' placeholder='Age' min='18' required>
+        <div class='buttons-container'>
+          <button class='js--save-button save-button button' type='submit'>Save</button>
+          <button class='js--discard-button discard-button button' type='reset'>Discard</button>
+        </div>
+    </form>
+  </div>
+  </div>    
+</body>
+
+</html>
