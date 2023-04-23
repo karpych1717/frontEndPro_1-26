@@ -7,11 +7,18 @@ module.exports = {
   entry: './src/js/index.js',
   output: { path: path.resolve(__dirname, 'dist') },
   module: {
-    rules: [],
-    loaders: { test: /\.css$/, loader: 'style-loader|css-loader' }
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          "sass-loader",
+        ],
+      }
+    ],
   },
   plugins: [
     new htmlWebpackPlugin({ template: './src/index.html'}),
-    new miniCssExtractPlugin({ })
   ]
 }
