@@ -1,27 +1,32 @@
 function setUp (params) {
-  const { form, elPre, elController, elId, elLoader } = params
-  const elForm = document.querySelector(`.${form}`)
+  const { form, pre, controller, id, loader } = params
 
-  elForm.addEventListener('submit', onSubmit)
+  const _form = document.querySelector(`.${form}`)
+  const _pre = document.querySelector(`.${pre}`)
+  const _controller = document.querySelector(`.${controller}`)
+  const _id = document.querySelector(`.${id}`)
+  const _loader = document.querySelector(`.${loader}`)
+
+  _form.addEventListener('submit', onSubmit)
 
   async function onSubmit (event) {
     event.preventDefault()
 
-    elLoader.classList.remove('d-none')
+    _loader.classList.remove('d-none')
 
-    const formURL = new FormData(elForm).get('url')
+    const formURL = new FormData(_form).get('url')
     const regEx = /\//
     const hasSlash = regEx.test(formURL)
 
     if (hasSlash) {
-      const normalizeURL = formURL.trim()
-      const response = await getSwapiData(elForm.action, normalizeURL)
+      const normalizedURL = formURL.trim()
+      const response = await getSwapiData(_form.action, normalizedURL)
       console.log('response', response)
 
-      showResponse(response, normalizeURL)
+      showResponse(response, normalizedURL)
     } else {
       window.alert('input "/"')
-      elLoader.classList.add('d-none')
+      _loader.classList.add('d-none')
     }
   }
 
@@ -47,23 +52,25 @@ function setUp (params) {
   function showResponse (response, url) {
     if (response?.status === 'success') {
       const getURLInfo = url.split('/')
-      elController.classList.remove('d-none')
-      elController.innerHTML = getURLInfo[0]
+      _controller.classList.remove('d-none')
+      _controller.innerHTML = getURLInfo[0]
       const id = getURLInfo[1]
+
       if (id) {
-        elId.classList.remove('d-none')
-        elId.innerHTML = id
+        _id.classList.remove('d-none')
+        _id.innerHTML = id
       } else {
-        elId.classList.add('d-none')
+        _id.classList.add('d-none')
       }
-      elPre.innerHTML = JSON.stringify(response.data, null, 2)
+
+      _pre.innerHTML = JSON.stringify(response.data, null, 2)
     } else {
-      elController.classList.add('d-none')
-      elId.classList.add('d-none')
-      elPre.innerHTML = JSON.stringify(response, null, 2)
+      _controller.classList.add('d-none')
+      _id.classList.add('d-none')
+      _pre.innerHTML = JSON.stringify(response, null, 2)
     }
 
-    elLoader.classList.add('d-none')
+    _loader.classList.add('d-none')
   }
 }
 

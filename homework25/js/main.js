@@ -4,9 +4,9 @@ import setUp from './swapi.js'
 document.addEventListener('DOMContentLoaded', () => {
   setUp({
     form: 'js--swapi_form',
-    elPre: document.querySelector('.js--swapi_pre'),
-    elController: document.querySelector('.js--swapi_controller'),
-    elId: document.querySelector('.js--swapi_id'),
-    elLoader: document.querySelector('.js--swapi_load')
+    pre: 'js--swapi_pre',
+    controller: 'js--swapi_controller',
+    id: 'js--swapi_id',
+    loader: 'js--swapi_load'
   })
 })
