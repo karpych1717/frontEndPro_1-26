@@ -1,5 +1,5 @@
-function setUp (params) {
-  const { form, pre, controller, id, loader } = params
+function setUp (classes) {
+  const { form, pre, controller, id, loader } = classes
 
   const _form = document.querySelector(`.${form}`)
   const _pre = document.querySelector(`.${pre}`)
