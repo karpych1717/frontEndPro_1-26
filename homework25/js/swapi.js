@@ -61,10 +61,10 @@ function showResponse (response, url, elements) {
   const { _pre, _controller, _id, _loader } = elements
 
   if (response?.status === 'success') {
-    const getURLInfo = url.split('/')
-    _controller.innerHTML = getURLInfo[0]
+    const splittedURL = url.split('/')
+    _controller.innerHTML = splittedURL[0]
     _controller.classList.remove('inactive')
-    const id = getURLInfo[1]
+    const id = splittedURL[1]
 
     if (id) {
       _id.innerHTML = id
