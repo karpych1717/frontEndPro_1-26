@@ -1,0 +1,95 @@
+body {
+  font-family: 'Georgia', sans-serif;
+  font-size: 120%;
+  color: #eee8aa;
+
+  background-color: #000000;
+}
+
+.paper {
+  width: 900px;
+
+  margin: 30px auto 30px;
+  padding: 30px 30px 30px 60px;
+
+  background-color: #203535;
+}
+
+a, a:visited, a:hover, a:active {
+  color: #8ab4f8;
+  text-underline-position: under;
+}
+
+.inactive {
+  display: none;
+}
+
+.form {
+  display: flex;
+
+  align-items: center;
+}
+
+.input-text {
+  padding: 8px;
+  background-color: #355555;
+}
+
+.form-input {
+  flex: 1;
+
+  padding-left: 10px;
+  margin-left: 0;
+  margin-right: 10px;
+
+  height: 32px;
+
+  font-size: 16px;
+}
+
+.form-input:focus {
+  border: 2px solid #69bd6c;
+  outline: none;
+}
+
+.button {
+  background-color: #4CAF50;
+  transition-duration: 0.4s;
+
+  border: none;
+  border-radius: 2px;
+  margin: 20px 0px 20px;
+
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.button:hover {
+  background-color: #69bd6c; /* Green */
+  color: #ffffff;
+}
+
+.card {
+  position: relative;
+
+  padding: 20px;
+  margin: 20px;
+
+  background-color: #355555;
+}
+
+.loader {
+  text-align: center;
+}
+
+.load {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% - 18px);
+  text-align: center;
+}

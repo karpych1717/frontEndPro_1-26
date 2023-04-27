@@ -16,7 +16,7 @@ function setUp (classes) {
 async function onSubmit (elements) {
   const { _form, _pre, _controller, _id, _loader } = elements
 
-  _loader.classList.remove('d-none')
+  _loader.classList.remove('inactive')
 
   const formURL = new FormData(_form).get('url')
   const regEx = /\//
@@ -34,7 +34,7 @@ async function onSubmit (elements) {
     )
   } else {
     window.alert('input "/"')
-    _loader.classList.add('d-none')
+    _loader.classList.add('inactive')
   }
 }
 
@@ -62,25 +62,26 @@ function showResponse (response, url, elements) {
 
   if (response?.status === 'success') {
     const getURLInfo = url.split('/')
-    _controller.classList.remove('d-none')
     _controller.innerHTML = getURLInfo[0]
+    _controller.classList.remove('inactive')
     const id = getURLInfo[1]
 
     if (id) {
-      _id.classList.remove('d-none')
       _id.innerHTML = id
+      _id.classList.remove('inactive')
     } else {
-      _id.classList.add('d-none')
+      _id.classList.add('inactive')
     }
 
     _pre.innerHTML = JSON.stringify(response.data, null, 2)
   } else {
-    _controller.classList.add('d-none')
-    _id.classList.add('d-none')
     _pre.innerHTML = JSON.stringify(response, null, 2)
+
+    _controller.classList.add('inactive')
+    _id.classList.add('inactive')
   }
 
-  _loader.classList.add('d-none')
+  _loader.classList.add('inactive')
 }
 
 export default setUp
