@@ -24,30 +24,16 @@ a, a:visited, a:hover, a:active {
   display: none;
 }
 
-.form {
-  display: flex;
-
-  align-items: center;
-}
-
 form {
   align-items: center;
-}
-
-.input-text {
-  
-  padding: 8px;
-  background-color: #355555;
 }
 
 input {
   display: block;
 
-  margin: auto;
-  padding: 8px;
+  margin: 10px auto;
+  padding: 5px;
   background-color: #355555;
-
-  height: 32px;
 
   font-size: 16px;
 }
@@ -59,44 +45,22 @@ input:focus {
 
 button {
   display: block;
-  
+
   background-color: #4CAF50;
   transition-duration: 0.4s;
 
   border: none;
   border-radius: 2px;
-  margin: auto;
+  margin: 10px auto;
 
   color: #ffffff;
   padding: 10px 20px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
 }
 
-.button:hover {
+button:hover {
   background-color: #69bd6c; /* Green */
   color: #ffffff;
-}
-
-.card {
-  position: relative;
-
-  padding: 20px;
-  margin: 20px;
-
-  background-color: #355555;
-}
-
-.loader {
-  text-align: center;
-}
-
-.load {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: calc(50% - 18px);
-  text-align: center;
 }
