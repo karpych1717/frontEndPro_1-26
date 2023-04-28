@@ -1,4 +1,4 @@
-import FormElement from './FormElement'
+import FormElement from './FormElement.js'
 
 class TextElement extends FormElement {
   constructor (name, value, placeholder) {
@@ -35,6 +35,8 @@ class CheckboxElement extends FormElement {
     this.element.name = this.name
     this.element.value = this.value
     this.element.checked = this.isChecked
+
+    return this.element
   }
 }
 
@@ -51,6 +53,8 @@ class ButtonElement extends FormElement {
     this.element.type = this.type
     this.element.name = this.name
     this.element.value = this.value
+
+    return this.element
   }
 }
 

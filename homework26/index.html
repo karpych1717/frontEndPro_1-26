@@ -6,7 +6,7 @@
 
   <link rel="stylesheet" href="./styles.css">
 
-  <script type='module' src='./js/main.js'></script>
+  <script type='module' src='./index.js'></script>
 </head>
 
 <body>
@@ -17,7 +17,8 @@
   <h1>SWAPI</h1>
   <hr>
 
-  <form action='https://swapi.dev/api' class='form js--swapi_form'>
+  <div class='app-wrapper'></div>
+  <form class='form js--form'>
     <span class='input-text'>https://swapi.dev/api</span>
     <input type='text' name='url' class='form-input js--swapi_input' placeholder='/people/1/'>
     <button class='button' type='submit'>Get info</button>
@@ -27,12 +28,6 @@
     <div class='card-body'>
       <span class='inactive js--swapi_controller'></span>
       <span class='inactive js--swapi_id'></span>
-
-      <div class='inactive loader js--swapi_load'>
-        <img src='./loader.gif' width='40px'>
-        <br>
-        <span>Loading...</span>
-      </div>
 
       <pre class='js--swapi_pre'></pre>
     </div>
