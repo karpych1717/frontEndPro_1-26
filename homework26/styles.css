@@ -30,35 +30,42 @@ a, a:visited, a:hover, a:active {
   align-items: center;
 }
 
+form {
+  align-items: center;
+}
+
 .input-text {
+  
   padding: 8px;
   background-color: #355555;
 }
 
-.form-input {
-  flex: 1;
+input {
+  display: block;
 
-  padding-left: 10px;
-  margin-left: 0;
-  margin-right: 10px;
+  margin: auto;
+  padding: 8px;
+  background-color: #355555;
 
   height: 32px;
 
   font-size: 16px;
 }
 
-.form-input:focus {
+input:focus {
   border: 2px solid #69bd6c;
   outline: none;
 }
 
-.button {
+button {
+  display: block;
+  
   background-color: #4CAF50;
   transition-duration: 0.4s;
 
   border: none;
   border-radius: 2px;
-  margin: 20px 0px 20px;
+  margin: auto;
 
   color: #ffffff;
   padding: 10px 20px;

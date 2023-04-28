@@ -9,7 +9,7 @@ class TextElement extends FormElement {
   }
 
   makeIt () {
-    this.element = document.createElement(this.type)
+    this.element = document.createElement('input')
     this.element.type = this.type
 
     this.element.name = this.name
@@ -29,7 +29,8 @@ class CheckboxElement extends FormElement {
   }
 
   makeIt () {
-    this.element = document.createElement(this.type)
+    this.element = document.createElement('input')
+    console.log(this.element)
     this.element.type = this.type
 
     this.element.name = this.name
