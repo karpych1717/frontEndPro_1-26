@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <title>HW26 by Vlad Karpenko</title>
+  <link rel='icon' type='image/png' href='../resources/logo.png'>
+
+  <link rel="stylesheet" href="./styles.css">
+
+  <script type='module' src='./js/main.js'></script>
+</head>
+
+<body>
+<div class='paper'>
+  <a href='../index.html'> &lt;-- Back</a>
+  <br>
+  <br>
+  <h1>SWAPI</h1>
+  <hr>
+
+  <form action='https://swapi.dev/api' class='form js--swapi_form'>
+    <span class='input-text'>https://swapi.dev/api</span>
+    <input type='text' name='url' class='form-input js--swapi_input' placeholder='/people/1/'>
+    <button class='button' type='submit'>Get info</button>
+  </form>
+
+  <div class='card'>
+    <div class='card-body'>
+      <span class='inactive js--swapi_controller'></span>
+      <span class='inactive js--swapi_id'></span>
+
+      <div class='inactive loader js--swapi_load'>
+        <img src='./loader.gif' width='40px'>
+        <br>
+        <span>Loading...</span>
+      </div>
+
+      <pre class='js--swapi_pre'></pre>
+    </div>
+  </div>
+</div>
+</body>
+</html>
