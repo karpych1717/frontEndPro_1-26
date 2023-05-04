@@ -77,6 +77,7 @@ class ButtonElement extends SmartFormElement {
 
   makeIt () {
     this.element = document.createElement('button')
+    this.element.innerHTML = this.name
 
     this.element.type = this.type
     this.element.name = this.name
