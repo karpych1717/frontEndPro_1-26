@@ -1,49 +1,76 @@
 import FormElement from './FormElement.js'
 
-class TextElement extends FormElement {
-  constructor (name, value, placeholder) {
-    super(name, value)
+class SmartFormElement extends FormElement {
+  redirectValue () {
+    if (this.element === undefined) {
+      throw new Error('unable to redirect value property before element creation')
+    }
 
-    this.type = 'text'
+    Object.defineProperty(this, 'value', {
+      get () {
+        return this.element.value
+      },
+      set (newValue) {
+        this.element.value = newValue
+      }
+    })
+  }
+
+  addClass (className) {
+    if (this.element === undefined) {
+      throw new Error('unable to add class before element creation')
+    }
+
+    this.element.classList.add(className)
+  }
+}
+
+class TextElement extends SmartFormElement {
+  constructor (name, value, placeholder) {
+    super(name, 'text-input', value)
+
     this.placeholder = placeholder
   }
 
   makeIt () {
     this.element = document.createElement('input')
-    this.element.type = this.type
+    this.element.type = 'text'
 
     this.element.name = this.name
     this.element.value = this.value
     this.element.placeholder = this.placeholder
 
+    this.redirectValue()
+
     return this.element
   }
 }
 
-class CheckboxElement extends FormElement {
+class CheckboxElement extends SmartFormElement {
   constructor (name, value, isChecked) {
-    super(name, value)
+    super(name, 'checkbox-input', value)
 
-    this.type = 'checkbox'
     this.isChecked = isChecked
   }
 
   makeIt () {
     this.element = document.createElement('input')
     console.log(this.element)
-    this.element.type = this.type
+    this.element.type = 'checkbox'
 
     this.element.name = this.name
     this.element.value = this.value
     this.element.checked = this.isChecked
 
+    this.redirectValue()
+
     return this.element
   }
 }
 
-class ButtonElement extends FormElement {
+class ButtonElement extends SmartFormElement {
   constructor (name, value, type) {
-    super(name, value)
+    super(name, 'button', value)
 
     this.type = type
   }
@@ -54,6 +81,8 @@ class ButtonElement extends FormElement {
     this.element.type = this.type
     this.element.name = this.name
     this.element.value = this.value
+
+    this.redirectValue()
 
     return this.element
   }
