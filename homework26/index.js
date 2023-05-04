@@ -19,26 +19,46 @@ document.addEventListener('DOMContentLoaded', () => {
   surnameField.addClass('input')
 
   checkBox.makeIt()
+  checkBox.addClass('checkbox')
+  const _checkLabel = document.createElement('label')
+  const _checkSpan = document.createElement('span')
+
+  _checkSpan.innerHTML = 'confirm it, please'
+
+  _checkLabel.appendChild(checkBox.element)
+  _checkLabel.appendChild(_checkSpan)
 
   button.makeIt()
   button.addClass('button')
 
   _form.appendChild(nameField.element)
   _form.appendChild(surnameField.element)
-  _form.appendChild(checkBox.element)
+  _form.appendChild(_checkLabel)
   _form.appendChild(button.element)
 
   _form.addEventListener('submit', (event) => {
     event.preventDefault()
 
     const data = new FormData(_form)
-    data.append('username', 'Chris')
 
-    for (const value of data.values()) {
-      console.log(value)
+    if (data.get('confirm') !== 'on') {
+      window.alert('you have to confirm it')
+      return
     }
 
-    console.log(data.get('confirm'))
+    if (data.get('name').trim() === '') {
+      window.alert('name is missing')
+      return
+    }
+
+    if (data.get('surname').trim() === '') {
+      window.alert('surname is missing')
+      return
+    }
+
+    for (const pair of data.entries()) {
+      console.log(`${pair[0]}: ${pair[1]}`)
+    }
   })
 
   _wrapper.appendChild(_form)

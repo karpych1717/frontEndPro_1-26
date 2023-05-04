@@ -28,6 +28,21 @@ form {
   align-items: center;
 }
 
+label {
+  display: block;
+  text-align: center;
+}
+
+.checkbox {
+  display: inline;
+  margin: 5px;
+}
+
+span {
+  display: inline;
+  margin: auto;
+}
+
 input {
   display: block;
 
