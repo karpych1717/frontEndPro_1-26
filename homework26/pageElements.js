@@ -2,6 +2,10 @@ import FormElement from './FormElement.js'
 
 class SmartFormElement extends FormElement {
   redirectValue () {
+    if (this.element === undefined) {
+      throw new Error('unable to redirect value property before element creation')
+    }
+
     Object.defineProperty(this, 'value', {
       get () {
         return this.element.value
