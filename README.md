@@ -1,7 +1,5 @@
 # frontEndPro
 Front End Pro Homework
+lessons 1-26
 by
 Vladyslav Karpenko
-
-
-[karpych1717.github.io/frontEndPro/](https://karpych1717.github.io/frontEndPro/)
